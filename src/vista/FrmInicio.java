@@ -14,7 +14,6 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 public class FrmInicio extends JFrame {
 
     private JPanel pnlInicio;
