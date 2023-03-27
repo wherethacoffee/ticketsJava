@@ -31,11 +31,11 @@ public class FrmInicio extends JFrame {
         pnlInicio = new JPanel(new GridBagLayout());
         pnlInicio.setBackground(Color.WHITE);
 
-        lblTitulo = new JLabel("Bienvenido al Sistema para realización de Tramites./nElige una opción");
+        lblTitulo = new JLabel("Bienvenido al Sistema de Tramites");
         lblTitulo.setFont(new Font("Arial", Font.BOLD, 24));
 
         lblLogo = new JLabel();
-        ImageIcon img = new ImageIcon("logo.png");
+        ImageIcon img = new ImageIcon("Imagenes/logo.png");
         lblLogo.setIcon(img);
 
         btnAdmin = new JButton("Administrador");
@@ -55,13 +55,13 @@ public class FrmInicio extends JFrame {
         pnlInicio.add(lblLogo, constraints);
 
         constraints.gridx = 0;
-        constraints.gridy = 2;
+        constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.insets = new Insets(10, 10, 10, 5);
         pnlInicio.add(btnAdmin, constraints);
 
         constraints.gridx = 1;
-        constraints.gridy = 2;
+        constraints.gridy = 1;
         constraints.gridwidth = 1;
         constraints.insets = new Insets(10, 5, 10, 10);
         pnlInicio.add(btnAgendarCita, constraints);
