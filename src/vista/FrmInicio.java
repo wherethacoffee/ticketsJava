@@ -76,7 +76,17 @@ public class FrmInicio extends JFrame {
                 dispose();
             }
         });
+
+        btnAgendarCita.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                // Crear instancia de FrmAgendar
+                FrmAgendar agendarCita = new FrmAgendar();
+                // Cerrar la instancia actual de FrmInicio
+                dispose();
+            }
+        });
     }
+    
 
     public JButton getBtnAdmin() {
         return btnAdmin;
