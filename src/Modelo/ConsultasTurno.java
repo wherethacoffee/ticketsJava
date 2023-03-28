@@ -86,8 +86,9 @@ public class ConsultasTurno extends Conexion{
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 return true;
+            } else{
+                return false;
             }
-            return false;
         } catch (Exception e) {
             System.err.println(e);
             return false;
