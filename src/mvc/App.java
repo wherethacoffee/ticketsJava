@@ -17,7 +17,6 @@ public class App {
         CtrlInicio ctrlInicio = new CtrlInicio();
         ctrlInicio.iniciar();
         CtrlAlumno ctrlAlumno = new CtrlAlumno(al, ca, frmAgendar, m);
-        ctrlAlumno.iniciar();
     }
 
 }

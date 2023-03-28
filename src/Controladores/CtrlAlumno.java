@@ -49,6 +49,44 @@ public class CtrlAlumno implements ActionListener {
                 limpiar();
             }
         }
+
+        if (e.getSource() == vista.btnModificar) {
+            modelo.setCurp(vista.txtCurp.getText());
+            modelo.setNombre(vista.txtNombre.getText());
+            modelo.setPaterno(vista.txtPaterno.getText());
+            modelo.setMaterno(vista.txtMaterno.getText());
+            modelo.setTelefono(vista.txtTelefono.getText());
+            modelo.setCorreo(vista.txtCorreo.getText());
+            modelo.setNivel(vista.txtAsunto.getText());
+            municipio.setNombre(vista.txtMunicipio.getText());
+
+            if (consultas.modificar(modelo)) {
+                JOptionPane.showMessageDialog(null, "Alumno modificado con exito");
+                limpiar();
+            } else {
+                JOptionPane.showMessageDialog(null, "Alumno no modificado");
+                limpiar();
+            }
+        }
+
+        if (e.getSource() == vista.btnBuscar) {
+            modelo.setCurp(vista.txtCurp.getText());
+
+            if (consultas.buscar(modelo)) {
+                vista.txtCurp.setText(modelo.getCurp());
+                vista.txtNombre.setText(modelo.getNombre());
+                vista.txtPaterno.setText(modelo.getPaterno());
+                vista.txtMaterno.setText(modelo.getMaterno());
+                vista.txtTelefono.setText(modelo.getTelefono());
+                vista.txtCorreo.setText(modelo.getCorreo());
+                vista.txtAsunto.setText(modelo.getNivel());
+                vista.txtMunicipio.setText(municipio.getNombre());
+            } else {
+                JOptionPane.showMessageDialog(null, "Alumno no encontrado");
+                limpiar();
+            }
+        }
+
     }
 
     public void limpiar() {
