@@ -9,19 +9,22 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
-import javax.swing.JComboBox;
 
 public class FrmAgendar extends JFrame {
 
-    private JPanel contentPane;
-    private JTextField txtCurp;
-    private JTextField txtNombre;
-    private JTextField txtPaterno;
-    private JTextField txtTelefono;
-    private JTextField txtCorreo;
-    private JTextField txtNivel;
-    private JTextField txtAsunto;
-    private JTextField txtTitular;
+    public JPanel contentPane;
+    public JTextField txtCurp;
+    public JTextField txtNombre;
+    public JTextField txtPaterno;
+    public JTextField txtTelefono;
+    public JTextField txtCorreo;
+    public JTextField txtNivel;
+    public JTextField txtAsunto;
+    public JTextField txtTitular;
+    public JTextField txtMunicipio;
+    public JTextField txtMaterno;
+    public JButton btnModificar, btnBuscar;
+    public javax.swing.JButton btnGuardar;
 
     /**
      * Launch the application.
@@ -44,7 +47,7 @@ public class FrmAgendar extends JFrame {
      */
     public FrmAgendar() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 545, 606);
+        setBounds(100, 100, 545, 657);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -52,7 +55,7 @@ public class FrmAgendar extends JFrame {
         contentPane.setLayout(null);
 
         JPanel panel = new JPanel();
-        panel.setBounds(10, 10, 509, 551);
+        panel.setBounds(10, 10, 509, 600);
         contentPane.add(panel);
         panel.setLayout(null);
 
@@ -78,37 +81,37 @@ public class FrmAgendar extends JFrame {
 
         JButton btnGuardar = new JButton("Guardar");
         btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnGuardar.setBounds(22, 495, 92, 32);
+        btnGuardar.setBounds(23, 533, 92, 32);
         panel.add(btnGuardar);
 
         JButton btnSalir = new JButton("Salir");
         btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnSalir.setBounds(264, 495, 92, 32);
+        btnSalir.setBounds(265, 533, 92, 32);
         panel.add(btnSalir);
 
         JLabel lblNivel = new JLabel("Nivel:");
         lblNivel.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblNivel.setBounds(30, 341, 102, 24);
+        lblNivel.setBounds(31, 382, 102, 24);
         panel.add(lblNivel);
 
         JLabel lblCorreo = new JLabel("Correo:");
         lblCorreo.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblCorreo.setBounds(30, 286, 102, 24);
+        lblCorreo.setBounds(31, 327, 102, 24);
         panel.add(lblCorreo);
 
         JLabel lblTelefono = new JLabel("Telefono:");
         lblTelefono.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblTelefono.setBounds(30, 232, 102, 24);
+        lblTelefono.setBounds(31, 273, 102, 24);
         panel.add(lblTelefono);
 
         JLabel lblMunicipio = new JLabel("Municipio:");
         lblMunicipio.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblMunicipio.setBounds(29, 440, 103, 24);
+        lblMunicipio.setBounds(30, 481, 103, 24);
         panel.add(lblMunicipio);
 
         JLabel lblAsunto = new JLabel("Asunto:");
         lblAsunto.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblAsunto.setBounds(30, 394, 102, 24);
+        lblAsunto.setBounds(31, 435, 102, 24);
         panel.add(lblAsunto);
 
         txtNombre = new JTextField();
@@ -123,22 +126,22 @@ public class FrmAgendar extends JFrame {
 
         txtTelefono = new JTextField();
         txtTelefono.setColumns(10);
-        txtTelefono.setBounds(142, 232, 313, 24);
+        txtTelefono.setBounds(143, 273, 313, 24);
         panel.add(txtTelefono);
 
         txtCorreo = new JTextField();
         txtCorreo.setColumns(10);
-        txtCorreo.setBounds(142, 286, 313, 24);
+        txtCorreo.setBounds(143, 327, 313, 24);
         panel.add(txtCorreo);
 
         txtNivel = new JTextField();
         txtNivel.setColumns(10);
-        txtNivel.setBounds(142, 341, 313, 24);
+        txtNivel.setBounds(143, 382, 313, 24);
         panel.add(txtNivel);
 
         txtAsunto = new JTextField();
         txtAsunto.setColumns(10);
-        txtAsunto.setBounds(142, 394, 313, 24);
+        txtAsunto.setBounds(143, 435, 313, 24);
         panel.add(txtAsunto);
 
         JLabel lblTitular = new JLabel("Titular:");
@@ -151,18 +154,29 @@ public class FrmAgendar extends JFrame {
         txtTitular.setBounds(142, 31, 313, 24);
         panel.add(txtTitular);
 
-        JComboBox cbMunicipio = new JComboBox();
-        cbMunicipio.setBounds(142, 440, 313, 25);
-        panel.add(cbMunicipio);
+        txtMunicipio = new JTextField();
+        txtMunicipio.setBounds(143, 481, 313, 25);
+        panel.add(txtMunicipio);
 
         JButton btnModificar = new JButton("Modificar");
         btnModificar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnModificar.setBounds(137, 495, 102, 32);
+        btnModificar.setBounds(138, 533, 102, 32);
         panel.add(btnModificar);
 
-        JButton btnBuscar = new JButton("Salir");
+        JButton btnBuscar = new JButton("Buscar");
         btnBuscar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnBuscar.setBounds(384, 495, 92, 32);
+        btnBuscar.setBounds(385, 533, 92, 32);
         panel.add(btnBuscar);
+
+        JLabel lblMaterno = new JLabel("Materno:");
+        lblMaterno.setFont(new Font("Times New Roman", Font.PLAIN, 17));
+        lblMaterno.setBounds(30, 227, 102, 24);
+        panel.add(lblMaterno);
+
+        txtMaterno = new JTextField();
+        txtMaterno.setColumns(10);
+        txtMaterno.setBounds(142, 227, 313, 24);
+        panel.add(txtMaterno);
     }
+
 }

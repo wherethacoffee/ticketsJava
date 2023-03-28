@@ -1,6 +1,5 @@
 package Modelo;
 
-
 public class Alumno {
     private String curp;
     private String nombre;
@@ -11,7 +10,6 @@ public class Alumno {
     private String nivel;
     private String asunto;
     private int municipio_idmunicipio;
-    private String status;  
 
     public String getCurp() {
         return curp;
@@ -85,11 +83,4 @@ public class Alumno {
         this.municipio_idmunicipio = municipio_idmunicipio;
     }
 
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
 }
