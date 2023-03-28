@@ -11,8 +11,6 @@ import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class FrmInicio extends JFrame {
 
@@ -69,24 +67,23 @@ public class FrmInicio extends JFrame {
 
         // // Agregar ActionListener para el botón btnAdmin
         // btnAdmin.addActionListener(new ActionListener() {
-        //     public void actionPerformed(ActionEvent e) {
-        //         // Crear instancia de FrmLoginAdmin
-        //         FrmLoginAdmin loginAdmin = new FrmLoginAdmin();
-        //         // Cerrar la instancia actual de FrmInicio
-        //         dispose();
-        //     }
+        // public void actionPerformed(ActionEvent e) {
+        // // Crear instancia de FrmLoginAdmin
+        // FrmLoginAdmin loginAdmin = new FrmLoginAdmin();
+        // // Cerrar la instancia actual de FrmInicio
+        // dispose();
+        // }
         // });
 
         // btnAgendarCita.addActionListener(new ActionListener() {
-        //     public void actionPerformed(ActionEvent e) {
-        //         // Crear instancia de FrmAgendar
-        //         FrmAgendar agendarCita = new FrmAgendar();
-        //         // Cerrar la instancia actual de FrmInicio
-        //         dispose();
-        //     }
+        // public void actionPerformed(ActionEvent e) {
+        // // Crear instancia de FrmAgendar
+        // FrmAgendar agendarCita = new FrmAgendar();
+        // // Cerrar la instancia actual de FrmInicio
+        // dispose();
+        // }
         // });
     }
-    
 
     public JButton getBtnAdmin() {
         return btnAdmin;
