@@ -96,7 +96,7 @@ public class ConsultasAlumno extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = obtenerConexion();
-        String sql = "select * from alumnoMunicipio where curp = ?";
+        String sql = "select * from alumno where curp = ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, pro.getCurp());
@@ -111,7 +111,7 @@ public class ConsultasAlumno extends Conexion {
                 pro.setCorreo(rs.getString("correo"));
                 pro.setNivel(rs.getString("nivel"));
                 pro.setAsunto(rs.getString("asunto"));
-                pro.setMunicipio_idmunicipio("mn");
+                pro.setMunicipio_idmunicipio(rs.getInt("municipio_idmunicipio"));
                 return true;
             }
 
