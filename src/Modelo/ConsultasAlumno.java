@@ -113,7 +113,7 @@ public class ConsultasAlumno extends Conexion {
                 pro.setNivel(rs.getString("nivel"));
                 pro.setAsunto(rs.getString("asunto"));
                 pro.setMunicipio_idmunicipio(rs.getInt("municipio_idmunicipio"));
-                pro.setNombreMunicipio("nombre_municipio");
+                pro.setNombreMunicipio(rs.getString("nombremunicipio"));
                 return true;
             }
 

@@ -9,7 +9,7 @@ public class Conexion {
     static String base = "ticketdb";
     static String URL = "jdbc:mysql://localhost:3306/" + base;
     static String USER = "root";
-    static String PASSWORD = "";
+    static String PASSWORD = "admin";
 
     public static Connection obtenerConexion() {
         try {
