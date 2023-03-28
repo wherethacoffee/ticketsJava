@@ -13,9 +13,9 @@ import javax.swing.JButton;
 public class FrmGestorAdmin extends JFrame {
 
     public JPanel contentPane;
-    public JTextField textField;
-    public JTextField textField_1;
-    public JTextField textField_2;
+    public JTextField txtIDusuario;
+    public JTextField txtUsuario;
+    public JTextField txtContrasena;
     public JButton btnAgregar, btnEliminar, btnActualizar, btnBuscar, btnLimpiar;
 
     /**
@@ -66,20 +66,20 @@ public class FrmGestorAdmin extends JFrame {
         lblId.setBounds(27, 55, 78, 32);
         panel.add(lblId);
 
-        textField = new JTextField();
-        textField.setBounds(156, 55, 183, 28);
-        panel.add(textField);
-        textField.setColumns(10);
+        txtIDusuario = new JTextField();
+        txtIDusuario.setBounds(156, 55, 183, 28);
+        txtIDusuario.setColumns(10);
+        panel.add(txtIDusuario);
 
-        textField_1 = new JTextField();
-        textField_1.setColumns(10);
-        textField_1.setBounds(156, 97, 183, 28);
-        panel.add(textField_1);
+        txtUsuario = new JTextField();
+        txtUsuario.setColumns(10);
+        txtUsuario.setBounds(156, 97, 183, 28);
+        panel.add(txtUsuario);
 
-        textField_2 = new JTextField();
-        textField_2.setColumns(10);
-        textField_2.setBounds(156, 139, 183, 28);
-        panel.add(textField_2);
+        txtContrasena = new JTextField();
+        txtContrasena.setColumns(10);
+        txtContrasena.setBounds(156, 139, 183, 28);
+        panel.add(txtContrasena);
 
         btnBuscar = new JButton("Buscar");
         btnBuscar.setFont(new Font("Tahoma", Font.BOLD, 15));
