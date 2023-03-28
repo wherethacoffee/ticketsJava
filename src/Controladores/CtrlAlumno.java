@@ -89,6 +89,9 @@ public class CtrlAlumno implements ActionListener {
                 limpiar();
             }
         }
+        if (e.getSource() == vista.btnSalir) {
+            System.exit(0);
+        }
 
     }
 
