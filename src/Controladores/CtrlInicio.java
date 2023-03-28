@@ -22,6 +22,8 @@ public class CtrlInicio implements ActionListener {
                 // Hacer visible la ventana
                 frmLoginAdmin.setVisible(true);
                 frmLoginAdmin.setTitle("Administradores");
+
+                vista.dispose();
             }
         });
 
@@ -33,7 +35,10 @@ public class CtrlInicio implements ActionListener {
                 // Hacer visible la ventana
                 frmAgendar.setVisible(true);
                 frmAgendar.setTitle("Formulario Cita");
+
+                vista.dispose();
             }
+            
         });
     }
 

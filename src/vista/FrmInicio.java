@@ -67,24 +67,24 @@ public class FrmInicio extends JFrame {
 
         add(pnlInicio, BorderLayout.CENTER);
 
-        // Agregar ActionListener para el botón btnAdmin
-        btnAdmin.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                // Crear instancia de FrmLoginAdmin
-                FrmLoginAdmin loginAdmin = new FrmLoginAdmin();
-                // Cerrar la instancia actual de FrmInicio
-                dispose();
-            }
-        });
+        // // Agregar ActionListener para el botón btnAdmin
+        // btnAdmin.addActionListener(new ActionListener() {
+        //     public void actionPerformed(ActionEvent e) {
+        //         // Crear instancia de FrmLoginAdmin
+        //         FrmLoginAdmin loginAdmin = new FrmLoginAdmin();
+        //         // Cerrar la instancia actual de FrmInicio
+        //         dispose();
+        //     }
+        // });
 
-        btnAgendarCita.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                // Crear instancia de FrmAgendar
-                FrmAgendar agendarCita = new FrmAgendar();
-                // Cerrar la instancia actual de FrmInicio
-                dispose();
-            }
-        });
+        // btnAgendarCita.addActionListener(new ActionListener() {
+        //     public void actionPerformed(ActionEvent e) {
+        //         // Crear instancia de FrmAgendar
+        //         FrmAgendar agendarCita = new FrmAgendar();
+        //         // Cerrar la instancia actual de FrmInicio
+        //         dispose();
+        //     }
+        // });
     }
     
 
