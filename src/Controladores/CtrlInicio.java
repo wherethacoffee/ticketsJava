@@ -7,7 +7,7 @@ import vista.FrmLoginAdmin;
 import vista.FrmAgendar;
 
 public class CtrlInicio implements ActionListener {
-    
+
     private final FrmInicio vista;
     private FrmAgendar frmAgendar;
 
@@ -15,38 +15,36 @@ public class CtrlInicio implements ActionListener {
     public CtrlInicio() {
         vista = new FrmInicio();
 
-
         vista.getBtnAdmin().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 // Crear una instancia de FrmLoginAdmin
                 FrmLoginAdmin frmLoginAdmin = new FrmLoginAdmin();
                 // Hacer visible la ventana
                 frmLoginAdmin.setVisible(true);
+                frmLoginAdmin.setTitle("Administradores");
             }
         });
-        
 
         vista.getBtnAgendarCita().addActionListener(new ActionListener() {
-            
 
             public void actionPerformed(ActionEvent e) {
                 // Crear una instancia de FrmAgendar
                 frmAgendar = new FrmAgendar();
                 // Hacer visible la ventana
                 frmAgendar.setVisible(true);
+                frmAgendar.setTitle("Formulario Cita");
             }
         });
     }
-    
+
     // ------- Controlador de la vista Agendar Cita --------
     @Override
     public void actionPerformed(ActionEvent e) {
-        if(e.getSource() == vista.getBtnAgendarCita()) {
+        if (e.getSource() == vista.getBtnAgendarCita()) {
             // Lógica para abrir ventana de agendar cita
         }
     }
 
-    
     public void iniciar() {
         vista.setVisible(true);
     }
