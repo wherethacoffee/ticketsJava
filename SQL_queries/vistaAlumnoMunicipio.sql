@@ -8,7 +8,7 @@ CREATE VIEW `alumnoMunicipio` AS
         alumno.correo,
         alumno.nivel,
         alumno.asunto,
-        municipio.nombre
+        municipio.nombre as mn
     FROM
         alumno
             JOIN
