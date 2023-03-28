@@ -1,15 +1,16 @@
 package Modelo;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class ConsultasTurno extends Conexion{
+public class ConsultasTurno extends Conexion {
 
-    public boolean registrar(Turno trn){
+    public boolean registrar(Turno trn) {
         PreparedStatement ps = null;
         Connection con = obtenerConexion();
-        String sql = "INSERT INTO turno (nturno, curp, idmunicipio, status) values (?, ?, ?, ?)";
+        String sql = "INSERT INTO turno (nturno, alumno_curp, alumno_municipio_idmunicipio, status) values (?, ?, ?, ?)";
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, trn.getNturno());
@@ -30,10 +31,10 @@ public class ConsultasTurno extends Conexion{
         }
     }
 
-    public boolean modificar(Turno trn){
+    public boolean modificar(Turno trn) {
         PreparedStatement ps = null;
         Connection con = obtenerConexion();
-        String sql = "UPDATE turno SET nturno =?, curp =?, idmunicipio =?, status =? WHERE nturno =?";
+        String sql = "UPDATE turno SET nturno =?, alumno_curp =?, alumno_municipio_idmunicipio =?, status =? WHERE nturno =?";
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, trn.getNturno());
@@ -55,7 +56,7 @@ public class ConsultasTurno extends Conexion{
         }
     }
 
-    public boolean eliminar(Turno trn){
+    public boolean eliminar(Turno trn) {
         PreparedStatement ps = null;
         Connection con = obtenerConexion();
         String sql = "DELETE FROM turno WHERE nturno =?";
@@ -76,7 +77,7 @@ public class ConsultasTurno extends Conexion{
         }
     }
 
-    public boolean buscar(Turno trn){
+    public boolean buscar(Turno trn) {
         PreparedStatement ps = null;
         Connection con = obtenerConexion();
         String sql = "SELECT * FROM turno WHERE nturno =?";
@@ -84,9 +85,13 @@ public class ConsultasTurno extends Conexion{
             ps = con.prepareStatement(sql);
             ps.setInt(1, trn.getNturno());
             ResultSet rs = ps.executeQuery();
-            if(rs.next()){
+            if (rs.next()) {
+                trn.setNturno(rs.getInt("nturno"));
+                trn.setCurp(rs.getString("alumno_curp"));
+                trn.setIdmunicipio(rs.getInt("alumno_municipio_idmunicipio"));
+                trn.setStatus(rs.getString("status"));
                 return true;
-            } else{
+            } else {
                 return false;
             }
         } catch (Exception e) {

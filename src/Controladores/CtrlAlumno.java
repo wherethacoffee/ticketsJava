@@ -1,7 +1,6 @@
 package Controladores;
 
 import Modelo.ConsultasAlumno;
-import Modelo.Municipio;
 import Modelo.Alumno;
 import vista.FrmAgendar;
 import java.awt.event.ActionEvent;
@@ -12,13 +11,11 @@ public class CtrlAlumno implements ActionListener {
     private final Alumno modelo;
     private final ConsultasAlumno consultas;
     private final FrmAgendar vista;
-    private final Municipio municipio;
 
-    public CtrlAlumno(Alumno modelo, ConsultasAlumno consultas, FrmAgendar vista, Municipio municipio) {
+    public CtrlAlumno(Alumno modelo, ConsultasAlumno consultas, FrmAgendar vista) {
         this.modelo = modelo;
         this.consultas = consultas;
         this.vista = vista;
-        this.municipio = municipio;
         this.vista.btnBuscar.addActionListener(this);
         this.vista.btnGuardar.addActionListener(this);
         this.vista.btnModificar.addActionListener(this);
