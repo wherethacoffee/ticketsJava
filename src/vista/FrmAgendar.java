@@ -103,7 +103,7 @@ public class FrmAgendar extends JFrame {
         lblTelefono.setBounds(29, 210, 102, 24);
         panel.add(lblTelefono);
 
-        JLabel lblMunicipio = new JLabel("Municipio:");
+        JLabel lblMunicipio = new JLabel("id Municipio:");
         lblMunicipio.setFont(new Font("Times New Roman", Font.PLAIN, 17));
         lblMunicipio.setBounds(28, 418, 103, 24);
         panel.add(lblMunicipio);

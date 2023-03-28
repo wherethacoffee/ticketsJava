@@ -10,7 +10,7 @@ public class Alumno {
     private String nivel;
     private String asunto;
     private int municipio_idmunicipio;
-    private String nombremunicipio;
+ 
 
     public String getCurp() {
         return curp;
@@ -83,14 +83,4 @@ public class Alumno {
     public void setMunicipio_idmunicipio(int municipio_idmunicipio) {
         this.municipio_idmunicipio = municipio_idmunicipio;
     }
-
-    public String getNombreMunicipio() {
-        return nombremunicipio;
-    }
-
-    public void setNombreMunicipio(String nombreMunicipio) {
-        this.nombremunicipio = nombreMunicipio;
-    }
-
-
 }

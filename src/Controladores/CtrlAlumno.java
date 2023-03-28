@@ -42,7 +42,7 @@ public class CtrlAlumno implements ActionListener {
             modelo.setAsunto(vista.txtAsunto.getText());
             modelo.setMunicipio_idmunicipio(Integer.parseInt(vista.txtMunicipio.getText()));
 
-            if (consultas.registrar(modelo, municipio)) {
+            if (consultas.registrar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Alumno registrado con exito");
                 limpiar();
             } else {
@@ -60,7 +60,7 @@ public class CtrlAlumno implements ActionListener {
             modelo.setCorreo(vista.txtCorreo.getText());
             modelo.setNivel(vista.txtNivel.getText());
             modelo.setAsunto(vista.txtAsunto.getText());
-            municipio.setNombre(vista.txtMunicipio.getText());
+            modelo.setMunicipio_idmunicipio(Integer.parseInt(vista.txtMunicipio.getText()));
 
             if (consultas.modificar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Alumno modificado con exito");
@@ -83,7 +83,8 @@ public class CtrlAlumno implements ActionListener {
                 vista.txtCorreo.setText(modelo.getCorreo());
                 vista.txtNivel.setText(modelo.getNivel());
                 vista.txtAsunto.setText(modelo.getAsunto());
-                vista.txtMunicipio.setText(municipio.getNombre());
+                vista.txtMunicipio.setText(Integer.toString(modelo.getMunicipio_idmunicipio()));
+
             } else {
                 JOptionPane.showMessageDialog(null, "Alumno no encontrado");
                 limpiar();
