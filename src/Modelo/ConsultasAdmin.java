@@ -9,12 +9,11 @@ public class ConsultasAdmin extends Conexion {
     public boolean registrar(Admin ad) {
         PreparedStatement ps = null;
         Connection con = obtenerConexion();
-        String sql = "inser into admin (idusuario, usuario, contrasena) values (?,?,?)";
+        String sql = "insert into admin (usuario, contrasena) values (?,?)";
         try {
             ps = con.prepareStatement(sql);
-            ps.setInt(1, ad.getIdusuario());
+            ps.setString(1, ad.getUsuario());
             ps.setString(2, ad.getUsuario());
-            ps.setString(3, ad.getUsuario());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -32,7 +31,7 @@ public class ConsultasAdmin extends Conexion {
     public boolean modificar(Admin ad) {
         PreparedStatement ps = null;
         Connection con = obtenerConexion();
-        String sql = "update admin set usuario=?, contrasena=? where idusuario=?";
+        String sql = "update admin set usuario=?, contrasenia=? where idusuario=?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, ad.getUsuario());
@@ -86,7 +85,7 @@ public class ConsultasAdmin extends Conexion {
             if (rs.next()) {
                 ad.setIdusuario(Integer.parseInt(rs.getString("idusuario")));
                 ad.setUsuario(rs.getString("usuario"));
-                ad.setContraseña(rs.getString("contrasena"));
+                ad.setContraseña(rs.getString("contrasenia"));
                 return true;
             }
             return false;
@@ -101,4 +100,31 @@ public class ConsultasAdmin extends Conexion {
             }
         }
     }// end-buscar
+    public boolean verificar_credenciales(Admin ad) {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = obtenerConexion();
+        String sql = "select * from admin where usuario =? and contrasenia =?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setString(1, ad.getUsuario());
+            ps.setString(2, ad.getContraseña());
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                return true;
+            } else{
+                return false;
+            }
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }
 }
