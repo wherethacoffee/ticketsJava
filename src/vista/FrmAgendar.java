@@ -78,12 +78,12 @@ public class FrmAgendar extends JFrame {
         panel.add(txtCurp);
         txtCurp.setColumns(10);
 
-        JButton btnGuardar = new JButton("Guardar");
+        btnGuardar = new JButton("Guardar");
         btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnGuardar.setBounds(21, 470, 92, 32);
         panel.add(btnGuardar);
 
-        JButton btnSalir = new JButton("Salir");
+        btnSalir = new JButton("Salir");
         btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
         btnSalir.setBounds(263, 470, 92, 32);
         panel.add(btnSalir);

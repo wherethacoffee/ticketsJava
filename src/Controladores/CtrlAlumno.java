@@ -25,7 +25,7 @@ public class CtrlAlumno implements ActionListener {
     }
 
     public void iniciar() {
-        vista.setVisible(false);
+        vista.setVisible(true);
         vista.setLocationRelativeTo(null);
     }
 
@@ -38,7 +38,8 @@ public class CtrlAlumno implements ActionListener {
             modelo.setMaterno(vista.txtMaterno.getText());
             modelo.setTelefono(vista.txtTelefono.getText());
             modelo.setCorreo(vista.txtCorreo.getText());
-            modelo.setNivel(vista.txtAsunto.getText());
+            modelo.setNivel(vista.txtNivel.getText());
+            modelo.setAsunto(vista.txtAsunto.getText());
             municipio.setNombre(vista.txtMunicipio.getText());
 
             if (consultas.registrar(modelo, municipio)) {
@@ -57,7 +58,8 @@ public class CtrlAlumno implements ActionListener {
             modelo.setMaterno(vista.txtMaterno.getText());
             modelo.setTelefono(vista.txtTelefono.getText());
             modelo.setCorreo(vista.txtCorreo.getText());
-            modelo.setNivel(vista.txtAsunto.getText());
+            modelo.setNivel(vista.txtNivel.getText());
+            modelo.setAsunto(vista.txtAsunto.getText());
             municipio.setNombre(vista.txtMunicipio.getText());
 
             if (consultas.modificar(modelo)) {
@@ -79,7 +81,8 @@ public class CtrlAlumno implements ActionListener {
                 vista.txtMaterno.setText(modelo.getMaterno());
                 vista.txtTelefono.setText(modelo.getTelefono());
                 vista.txtCorreo.setText(modelo.getCorreo());
-                vista.txtAsunto.setText(modelo.getNivel());
+                vista.txtNivel.setText(modelo.getNivel());
+                vista.txtAsunto.setText(modelo.getAsunto());
                 vista.txtMunicipio.setText(municipio.getNombre());
             } else {
                 JOptionPane.showMessageDialog(null, "Alumno no encontrado");
@@ -96,6 +99,7 @@ public class CtrlAlumno implements ActionListener {
         vista.txtMaterno.setText(null);
         vista.txtTelefono.setText(null);
         vista.txtCorreo.setText(null);
+        vista.txtNivel.setText(null);
         vista.txtAsunto.setText(null);
         vista.txtMunicipio.setText(null);
     }

@@ -22,7 +22,7 @@ public class ConsultasAlumno extends Conexion {
             ps.setString(6, pro.getCorreo());
             ps.setString(7, pro.getNivel());
             ps.setString(8, pro.getAsunto());
-            ps.setString(8, mp.getNombre());
+            ps.setString(9, mp.getNombre());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -42,7 +42,7 @@ public class ConsultasAlumno extends Conexion {
     public boolean modificar(Alumno pro) {
         PreparedStatement ps = null;
         Connection conn = obtenerConexion();
-        String sql = "UPDATE producto SET nombre=?,Paterno=?,materno=?,telefono=?,correo=?,nivel=?,asunto=? where curp=?";
+        String sql = "UPDATE producto SET nombre=?,Paterno=?,materno=?,telefono=?,correo=?,nivel=?,asunto=?,  where curp=?";
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, pro.getNombre());
@@ -96,7 +96,7 @@ public class ConsultasAlumno extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = obtenerConexion();
-        String sql = "SELECT * FROM alumno WHERE curp=?";
+        String sql = "select * from alumnoMunicipio where curp = ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, pro.getCurp());
@@ -111,6 +111,7 @@ public class ConsultasAlumno extends Conexion {
                 pro.setCorreo(rs.getString("correo"));
                 pro.setNivel(rs.getString("nivel"));
                 pro.setAsunto(rs.getString("asunto"));
+                pro.setMunicipio_idmunicipio("mn");
                 return true;
             }
 

@@ -79,8 +79,8 @@ public class Alumno {
         return municipio_idmunicipio;
     }
 
-    public void setMunicipio_idmunicipio(int municipio_idmunicipio) {
-        this.municipio_idmunicipio = municipio_idmunicipio;
+    public void setMunicipio_idmunicipio(String string) {
+        this.municipio_idmunicipio = string;
     }
 
 }
