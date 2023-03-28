@@ -96,7 +96,8 @@ public class ConsultasAlumno extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = obtenerConexion();
-        String sql = "select * from alumno where curp = ?";
+        String sql = "SELECT a.*, m.nombremunicipio FROM alumno a "+
+        "INNER JOIN municipio m ON a.idmunicipio = m.idmunicipio WHERE a.curp = ?;";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, pro.getCurp());
@@ -112,6 +113,7 @@ public class ConsultasAlumno extends Conexion {
                 pro.setNivel(rs.getString("nivel"));
                 pro.setAsunto(rs.getString("asunto"));
                 pro.setMunicipio_idmunicipio(rs.getInt("municipio_idmunicipio"));
+                pro.setNombreMunicipio("nombre_municipio");
                 return true;
             }
 
