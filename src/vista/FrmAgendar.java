@@ -21,7 +21,6 @@ public class FrmAgendar extends JFrame {
     private JTextField txtCorreo;
     private JTextField txtNivel;
     private JTextField txtAsunto;
-    private JTextField txtEstatus;
     private JTextField txtTitular;
 
     /**
@@ -45,7 +44,7 @@ public class FrmAgendar extends JFrame {
      */
     public FrmAgendar() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 545, 661);
+        setBounds(100, 100, 545, 606);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -53,7 +52,7 @@ public class FrmAgendar extends JFrame {
         contentPane.setLayout(null);
 
         JPanel panel = new JPanel();
-        panel.setBounds(10, 10, 509, 604);
+        panel.setBounds(10, 10, 509, 551);
         contentPane.add(panel);
         panel.setLayout(null);
 
@@ -79,12 +78,12 @@ public class FrmAgendar extends JFrame {
 
         JButton btnGuardar = new JButton("Guardar");
         btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnGuardar.setBounds(30, 550, 92, 32);
+        btnGuardar.setBounds(22, 495, 92, 32);
         panel.add(btnGuardar);
 
         JButton btnSalir = new JButton("Salir");
         btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnSalir.setBounds(269, 550, 92, 32);
+        btnSalir.setBounds(264, 495, 92, 32);
         panel.add(btnSalir);
 
         JLabel lblNivel = new JLabel("Nivel:");
@@ -101,11 +100,6 @@ public class FrmAgendar extends JFrame {
         lblTelefono.setFont(new Font("Times New Roman", Font.PLAIN, 17));
         lblTelefono.setBounds(30, 232, 102, 24);
         panel.add(lblTelefono);
-
-        JLabel lblEstatus = new JLabel("Estatus:");
-        lblEstatus.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblEstatus.setBounds(30, 495, 102, 24);
-        panel.add(lblEstatus);
 
         JLabel lblMunicipio = new JLabel("Municipio:");
         lblMunicipio.setFont(new Font("Times New Roman", Font.PLAIN, 17));
@@ -147,11 +141,6 @@ public class FrmAgendar extends JFrame {
         txtAsunto.setBounds(142, 394, 313, 24);
         panel.add(txtAsunto);
 
-        txtEstatus = new JTextField();
-        txtEstatus.setColumns(10);
-        txtEstatus.setBounds(142, 495, 313, 24);
-        panel.add(txtEstatus);
-
         JLabel lblTitular = new JLabel("Titular:");
         lblTitular.setFont(new Font("Times New Roman", Font.PLAIN, 17));
         lblTitular.setBounds(30, 31, 102, 24);
@@ -168,12 +157,12 @@ public class FrmAgendar extends JFrame {
 
         JButton btnModificar = new JButton("Modificar");
         btnModificar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnModificar.setBounds(142, 550, 102, 32);
+        btnModificar.setBounds(137, 495, 102, 32);
         panel.add(btnModificar);
 
         JButton btnBuscar = new JButton("Salir");
         btnBuscar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnBuscar.setBounds(392, 550, 92, 32);
+        btnBuscar.setBounds(384, 495, 92, 32);
         panel.add(btnBuscar);
     }
 }
