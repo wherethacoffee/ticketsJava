@@ -2,6 +2,7 @@ package Modelo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class ConsultasAdmin extends Conexion {
@@ -31,7 +32,7 @@ public class ConsultasAdmin extends Conexion {
     public boolean modificar(Admin ad) {
         PreparedStatement ps = null;
         Connection con = obtenerConexion();
-        String sql = "update admin set usuario=?, contrasena=? where id=?";
+        String sql = "update admin set usuario=?, contrasena=? where idusuario=?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, ad.getUsuario());
@@ -54,7 +55,7 @@ public class ConsultasAdmin extends Conexion {
     public boolean eliminar(Admin ad) {
         PreparedStatement ps = null;
         Connection con = obtenerConexion();
-        String sql = "delete from admin where id = ?";
+        String sql = "delete from admin where idusuario = ?";
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, ad.getIdusuario());
@@ -70,5 +71,34 @@ public class ConsultasAdmin extends Conexion {
                 System.err.println(e);
             }
         }
-    }//
+    }// end-eliminar
+
+    public boolean buscar(Admin ad) {
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = obtenerConexion();
+        String sql = "select * from admin where idusuario = ?";
+        try {
+            ps = con.prepareStatement(sql);
+            ps.setInt(1, ad.getIdusuario());
+            rs = ps.executeQuery();
+
+            if (rs.next()) {
+                ad.setIdusuario(Integer.parseInt(rs.getString("idusuario")));
+                ad.setUsuario(rs.getString("usuario"));
+                ad.setContraseña(rs.getString("contrasena"));
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+    }// end-buscar
 }
