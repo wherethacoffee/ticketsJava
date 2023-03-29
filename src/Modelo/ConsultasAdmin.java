@@ -105,7 +105,7 @@ public class ConsultasAdmin extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = obtenerConexion();
-        String sql = "select * from admin where usuario =? and contrasenia =?";
+        String sql = "select * from admin where usuario =? and contrasena =?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, ad.getUsuario());

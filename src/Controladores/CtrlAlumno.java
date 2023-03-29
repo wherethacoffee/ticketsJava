@@ -23,7 +23,7 @@ public class CtrlAlumno implements ActionListener {
     }
 
     public void iniciar() {
-        vista.setVisible(true);
+        vista.setVisible(false);
         vista.setLocationRelativeTo(null);
     }
 
@@ -106,15 +106,15 @@ public class CtrlAlumno implements ActionListener {
         vista.txtMunicipio.setText(null);
     }
 
-    public boolean verficiar_curp(String curp){
+    public boolean verficiar_curp(String curp) {
         String CURP_REGEX = "^[A-Z]{4}[0-9]{6}[H,M][A-Z]{5}[A-Z0-9]{2}$";
-        
+
         Pattern pattern = Pattern.compile(CURP_REGEX);
         boolean isCurpValid = pattern.matcher(curp).matches();
-        
-        if (isCurpValid){
+
+        if (isCurpValid) {
             return true;
-        } else{
+        } else {
             return false;
         }
     }
