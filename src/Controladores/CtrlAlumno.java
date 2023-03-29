@@ -6,6 +6,7 @@ import vista.FrmAgendar;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import java.util.regex.Pattern;
 
 public class CtrlAlumno implements ActionListener {
     private final Alumno modelo;
@@ -103,5 +104,18 @@ public class CtrlAlumno implements ActionListener {
         vista.txtNivel.setText(null);
         vista.txtAsunto.setText(null);
         vista.txtMunicipio.setText(null);
+    }
+
+    public boolean verficiar_curp(String curp){
+        String CURP_REGEX = "^[A-Z]{4}[0-9]{6}[H,M][A-Z]{5}[A-Z0-9]{2}$";
+        
+        Pattern pattern = Pattern.compile(CURP_REGEX);
+        boolean isCurpValid = pattern.matcher(curp).matches();
+        
+        if (isCurpValid){
+            return true;
+        } else{
+            return false;
+        }
     }
 }
