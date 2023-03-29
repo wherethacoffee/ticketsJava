@@ -100,6 +100,7 @@ public class ConsultasAdmin extends Conexion {
             }
         }
     }// end-buscar
+
     public boolean verificar_credenciales(Admin ad) {
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -113,7 +114,7 @@ public class ConsultasAdmin extends Conexion {
 
             if (rs.next()) {
                 return true;
-            } else{
+            } else {
                 return false;
             }
         } catch (SQLException e) {
