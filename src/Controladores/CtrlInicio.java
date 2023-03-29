@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import vista.FrmInicio;
 import vista.FrmLoginAdmin;
 import vista.FrmAgendar;
+import Controladores.CtrlAlumno;
 
 public class CtrlInicio implements ActionListener {
 
@@ -38,7 +39,7 @@ public class CtrlInicio implements ActionListener {
 
                 vista.dispose();
             }
-            
+
         });
     }
 
@@ -53,4 +54,10 @@ public class CtrlInicio implements ActionListener {
     public void iniciar() {
         vista.setVisible(true);
     }
+
+    public void cambiar() {
+        CtrlAlumno ctrlAlumno = new CtrlAlumno(null, null, frmAgendar);
+        ctrlAlumno.iniciar();
+    }
+
 }

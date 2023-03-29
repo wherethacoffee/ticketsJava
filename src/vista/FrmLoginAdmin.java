@@ -4,6 +4,7 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
@@ -14,7 +15,7 @@ public class FrmLoginAdmin extends JFrame {
 
         public JPanel contentPane;
         public JTextField txtUsuario;
-        public JTextField txtContrasena;
+        public JPasswordField txtContrasena;
         public JButton btnIngresar, btnSalir;
 
         /**
@@ -65,7 +66,7 @@ public class FrmLoginAdmin extends JFrame {
                 panel.add(txtUsuario);
                 txtUsuario.setColumns(10);
 
-                txtContrasena = new JTextField();
+                txtContrasena = new JPasswordField();
                 txtContrasena.setColumns(10);
                 txtContrasena.setBounds(130, 104, 212, 26);
                 panel.add(txtContrasena);

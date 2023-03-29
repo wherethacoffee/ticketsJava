@@ -24,7 +24,7 @@ public class CtrlTurno implements ActionListener {
     }
 
     public void iniciar() {
-        vista.setVisible(false);
+        vista.setVisible(true);
         vista.setLocationRelativeTo(null);
     }
 

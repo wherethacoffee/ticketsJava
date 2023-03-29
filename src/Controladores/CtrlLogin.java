@@ -22,7 +22,7 @@ public class CtrlLogin implements ActionListener {
     }
 
     public void iniciar() {
-        vista.setVisible(false);
+        vista.setVisible(true);
         vista.setLocationRelativeTo(null);
     }
 
@@ -31,7 +31,7 @@ public class CtrlLogin implements ActionListener {
         if (e.getSource() == vista.btnIngresar) {
             modelo.setUsuario(vista.txtUsuario.getText());
 
-            if (consultas.verificar_credenciales(modelo)) {
+            if (consultas.buscar(modelo)) {
                 vista.txtUsuario.setText(modelo.getUsuario());
                 vista.txtContrasena.setText(modelo.getContraseña());
                 Cambiar();

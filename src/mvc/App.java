@@ -34,6 +34,7 @@ public class App {
 
         // CtrlTurno ctrlTurno = new CtrlTurno(frmAdminAgenda, conTur, tu);
         // ctrlTurno.iniciar();
+
         // Admin ad = new Admin();
         // FrmLoginAdmin frmLoginAdmin = new FrmLoginAdmin();
         // ConsultasAdmin conAdmin = new ConsultasAdmin();

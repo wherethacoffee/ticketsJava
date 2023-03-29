@@ -39,6 +39,7 @@ public class CtrlAlumno implements ActionListener {
             modelo.setNivel(vista.txtNivel.getText());
             modelo.setAsunto(vista.txtAsunto.getText());
             modelo.setMunicipio_idmunicipio(Integer.parseInt(vista.txtMunicipio.getText()));
+            verficiar_curp(vista.txtCurp.getText());
 
             if (consultas.registrar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Alumno registrado con exito");
