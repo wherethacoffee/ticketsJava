@@ -18,8 +18,8 @@ import Controladores.CtrlLogin;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        CtrlInicio ctrlInicio = new CtrlInicio();
-        ctrlInicio.iniciar();
+        // CtrlInicio ctrlInicio = new CtrlInicio();
+        // ctrlInicio.iniciar();
 
         Alumno al = new Alumno();
         FrmAgendar frmAgendar = new FrmAgendar();
@@ -28,18 +28,18 @@ public class App {
         CtrlAlumno ctrlAlumno = new CtrlAlumno(al, ca, frmAgendar);
         ctrlAlumno.iniciar();
 
-        Turno tu = new Turno();
-        FrmAdminAgenda frmAdminAgenda = new FrmAdminAgenda();
-        ConsultasTurno conTur = new ConsultasTurno();
+        // Turno tu = new Turno();
+        // FrmAdminAgenda frmAdminAgenda = new FrmAdminAgenda();
+        // ConsultasTurno conTur = new ConsultasTurno();
 
-        CtrlTurno ctrlTurno = new CtrlTurno(frmAdminAgenda, conTur, tu);
-        ctrlTurno.iniciar();
-        Admin ad = new Admin();
-        FrmLoginAdmin frmLoginAdmin = new FrmLoginAdmin();
-        ConsultasAdmin conAdmin = new ConsultasAdmin();
+        // CtrlTurno ctrlTurno = new CtrlTurno(frmAdminAgenda, conTur, tu);
+        // ctrlTurno.iniciar();
+        // Admin ad = new Admin();
+        // FrmLoginAdmin frmLoginAdmin = new FrmLoginAdmin();
+        // ConsultasAdmin conAdmin = new ConsultasAdmin();
 
-        CtrlLogin ctrlLogin = new CtrlLogin(ad, frmLoginAdmin, conAdmin);
-        ctrlLogin.iniciar();
+        // CtrlLogin ctrlLogin = new CtrlLogin(ad, frmLoginAdmin, conAdmin);
+        // ctrlLogin.iniciar();
 
     }
 
