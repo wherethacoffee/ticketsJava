@@ -15,6 +15,7 @@ public class FrmGestorMunicipio extends JFrame {
     private JPanel contentPane;
     private JTextField txtIDMunicipio;
     private JTextField txtNombreMunicipio;
+    public JButton btnAgregar, btnActualizar, btnEliminar, btnLimpiar, btnSalir, btnBuscar;
 
     /**
      * Launch the application.
@@ -59,27 +60,27 @@ public class FrmGestorMunicipio extends JFrame {
         lblId.setBounds(38, 73, 78, 32);
         panel.add(lblId);
 
-        JButton btnBuscar = new JButton("Buscar");
+        btnBuscar = new JButton("Buscar");
         btnBuscar.setFont(new Font("Tahoma", Font.BOLD, 15));
         btnBuscar.setBounds(378, 192, 97, 32);
         panel.add(btnBuscar);
 
-        JButton btnActualizar = new JButton("Actualizar");
+        btnActualizar = new JButton("Actualizar");
         btnActualizar.setFont(new Font("Tahoma", Font.BOLD, 15));
         btnActualizar.setBounds(129, 192, 123, 32);
         panel.add(btnActualizar);
 
-        JButton btnAgregar = new JButton("Agregar");
+        btnAgregar = new JButton("Agregar");
         btnAgregar.setFont(new Font("Tahoma", Font.BOLD, 15));
         btnAgregar.setBounds(10, 192, 97, 32);
         panel.add(btnAgregar);
 
-        JButton btnEliminar = new JButton("Eliminar");
+        btnEliminar = new JButton("Eliminar");
         btnEliminar.setFont(new Font("Tahoma", Font.BOLD, 15));
         btnEliminar.setBounds(262, 192, 97, 32);
         panel.add(btnEliminar);
 
-        JButton btnLimpiar = new JButton("limpiar");
+        btnLimpiar = new JButton("limpiar");
         btnLimpiar.setFont(new Font("Tahoma", Font.BOLD, 15));
         btnLimpiar.setBounds(378, 139, 97, 32);
         panel.add(btnLimpiar);
