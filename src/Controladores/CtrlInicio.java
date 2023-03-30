@@ -10,7 +10,6 @@ import Modelo.ConsultasAlumno;
 import Modelo.ConsultasAdmin;
 import Modelo.Admin;
 
-
 public class CtrlInicio implements ActionListener {
 
     private final FrmInicio vista;
@@ -26,7 +25,7 @@ public class CtrlInicio implements ActionListener {
                 Admin admin = new Admin();
                 CtrlLogin ctrlLogin = new CtrlLogin(admin, frmLoginAdmin, cAdmin);
                 ctrlLogin.iniciar();
-               vista.dispose();
+                vista.dispose();
             }
         });
 
@@ -43,7 +42,6 @@ public class CtrlInicio implements ActionListener {
 
         });
     }
-
 
     // ------- Controlador de la vista Agendar Cita --------
     @Override
