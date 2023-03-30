@@ -38,17 +38,21 @@ public class CtrlAlumno implements ActionListener {
             modelo.setTelefono(vista.txtTelefono.getText());
             modelo.setCorreo(vista.txtCorreo.getText());
             modelo.setNivel(vista.txtNivel.getText());
-            modelo.setAsunto(vista.cbAsunto.getSelectedIndex());
-            ;
+            modelo.setAsunto(vista.cbAsunto.getSelectedIndex());  
             modelo.setMunicipio_idmunicipio(vista.cbMunicipio.getSelectedIndex());
-            verficiar_curp(vista.txtCurp.getText());
 
-            if (consultas.registrar(modelo)) {
-                JOptionPane.showMessageDialog(null, "Alumno registrado con exito");
-                limpiar();
+            boolean curpValida = verficiar_curp(modelo.getCurp());
+            if (curpValida) {
+                if (consultas.registrar(modelo)) {
+                    JOptionPane.showMessageDialog(null, "Alumno Registrado con exito");
+                    limpiar();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Alumno no registrado");
+                    limpiar();
+                }
+
             } else {
-                JOptionPane.showMessageDialog(null, "Alumno no registrado");
-                limpiar();
+                JOptionPane.showMessageDialog(null, "La curp ingresada no es válida");
             }
         }
 

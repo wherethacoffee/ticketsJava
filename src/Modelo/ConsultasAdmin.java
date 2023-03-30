@@ -102,7 +102,7 @@ public class ConsultasAdmin extends Conexion {
         }
     }// end-buscar
 
-    public boolean verificar_credenciales(Admin ad) {
+    public static boolean verificar_credenciales(Admin ad) {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = obtenerConexion();
@@ -123,6 +123,7 @@ public class ConsultasAdmin extends Conexion {
             return false;
         } finally {
             try {
+                // Cierra la conexión a la base de datos 
                 con.close();
             } catch (SQLException e) {
                 System.err.println(e);
