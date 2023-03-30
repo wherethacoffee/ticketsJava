@@ -94,6 +94,7 @@ public class ConsultasAdmin extends Conexion {
             return false;
         } finally {
             try {
+                // Cierra la conexión con la base de datos
                 con.close();
             } catch (SQLException e) {
                 System.err.println(e);

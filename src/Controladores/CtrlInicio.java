@@ -5,9 +5,11 @@ import java.awt.event.ActionListener;
 import vista.FrmInicio;
 import vista.FrmLoginAdmin;
 import vista.FrmAgendar;
-import Controladores.CtrlAlumno;
 import Modelo.Alumno;
 import Modelo.ConsultasAlumno;
+import Modelo.ConsultasAdmin;
+import Modelo.Admin;
+
 
 public class CtrlInicio implements ActionListener {
 
@@ -19,13 +21,12 @@ public class CtrlInicio implements ActionListener {
 
         vista.getBtnAdmin().addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de FrmLoginAdmin
                 FrmLoginAdmin frmLoginAdmin = new FrmLoginAdmin();
-                // Hacer visible la ventana
-                frmLoginAdmin.setVisible(true);
-                frmLoginAdmin.setTitle("Administradores");
-
-                vista.dispose();
+                ConsultasAdmin cAdmin = new ConsultasAdmin();
+                Admin admin = new Admin();
+                CtrlLogin ctrlLogin = new CtrlLogin(admin, frmLoginAdmin, cAdmin);
+                ctrlLogin.iniciar();
+               vista.dispose();
             }
         });
 
@@ -42,6 +43,7 @@ public class CtrlInicio implements ActionListener {
 
         });
     }
+
 
     // ------- Controlador de la vista Agendar Cita --------
     @Override

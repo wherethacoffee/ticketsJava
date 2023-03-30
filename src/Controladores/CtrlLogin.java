@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import vista.FrmAdminAgenda;
+import vista.FrmInicio;
 
 public class CtrlLogin implements ActionListener {
     private final Admin modelo;
@@ -19,6 +20,8 @@ public class CtrlLogin implements ActionListener {
         this.consultas = consultas;
         this.vista.btnIngresar.addActionListener(this);
         this.vista.btnSalir.addActionListener(this);
+
+
     }
 
     public void iniciar() {
@@ -41,8 +44,14 @@ public class CtrlLogin implements ActionListener {
         }
 
         if (e.getSource() == vista.btnSalir) {
-            System.exit(0);
+            CtrlInicio fInicio = new CtrlInicio();
+            fInicio.iniciar();
+            vista.dispose();
+            
+           // System.exit(0);
         }
+
+
 
     }
 
