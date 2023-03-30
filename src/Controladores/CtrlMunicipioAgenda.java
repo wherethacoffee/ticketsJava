@@ -21,13 +21,44 @@ public class CtrlMunicipioAgenda implements ActionListener {
         this.vista.btnActualizar.addActionListener(this);
         this.vista.btnSalir.addActionListener(this);
         this.vista.btnBuscar.addActionListener(this); 
+        this.vista.btnLimpiar.addActionListener(this);
+    }
+
+    public void iniciar(){
+        vista.setVisible(true);
+        vista.setLocationRelativeTo(null);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'actionPerformed'");
+
+        if (e.getSource() == vista.btnAgregar){
+
+        }
+
+        if (e.getSource() == vista.btnEliminar){
+
+        }
+
+        if (e.getSource() == vista.btnActualizar){
+
+        }
+
+        if (e.getSource() == vista.btnSalir){
+
+        }
+        
+        if (e.getSource() == vista.btnBuscar){
+
+        }
+
+        if (e.getSource() == vista.btnLimpiar){
+            limpiar();
+        }
     }
 
-
+    public void limpiar(){
+        vista.txtIDMunicipio.setText(null);
+        vista.txtNombreMunicipio.setText(null);
+    }
 }
