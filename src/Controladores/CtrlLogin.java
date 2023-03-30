@@ -30,15 +30,13 @@ public class CtrlLogin implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) {
-        Admin admin = new Admin();
-        admin.setUsuario("Nombre de usuario");
-        admin.setContraseña("Contraseña");
 
         if (e.getSource() == vista.btnIngresar) {
             modelo.setUsuario(vista.txtUsuario.getText());
+            modelo.setContraseña(new String(vista.txtContrasena.getPassword())); //Obtiene la contrsaeña del campo de texto 
 
-            if (ConsultasAdmin.verificar_credenciales(admin)) {
-
+            if (ConsultasAdmin.verificar_credenciales(modelo)) {
+                Cambiar();
             } else {
                 JOptionPane.showMessageDialog(vista, "Usuario o contraseña incorrectos");
             }
