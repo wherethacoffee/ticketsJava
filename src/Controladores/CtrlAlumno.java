@@ -1,24 +1,22 @@
 package Controladores;
 
 import Modelo.ConsultasAlumno;
-import Modelo.Municipio;
 import Modelo.Alumno;
 import vista.FrmAgendar;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import java.util.regex.Pattern;
 
 public class CtrlAlumno implements ActionListener {
     private final Alumno modelo;
     private final ConsultasAlumno consultas;
     private final FrmAgendar vista;
-    private final Municipio municipio;
 
-    public CtrlAlumno(Alumno modelo, ConsultasAlumno consultas, FrmAgendar vista, Municipio municipio) {
+    public CtrlAlumno(Alumno modelo, ConsultasAlumno consultas, FrmAgendar vista) {
         this.modelo = modelo;
         this.consultas = consultas;
         this.vista = vista;
-        this.municipio = municipio;
         this.vista.btnBuscar.addActionListener(this);
         this.vista.btnGuardar.addActionListener(this);
         this.vista.btnModificar.addActionListener(this);
@@ -41,6 +39,7 @@ public class CtrlAlumno implements ActionListener {
             modelo.setNivel(vista.txtNivel.getText());
             modelo.setAsunto(vista.txtAsunto.getText());
             modelo.setMunicipio_idmunicipio(Integer.parseInt(vista.txtMunicipio.getText()));
+            verficiar_curp(vista.txtCurp.getText());
 
             if (consultas.registrar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Alumno registrado con exito");
@@ -106,5 +105,18 @@ public class CtrlAlumno implements ActionListener {
         vista.txtNivel.setText(null);
         vista.txtAsunto.setText(null);
         vista.txtMunicipio.setText(null);
+    }
+
+    public boolean verficiar_curp(String curp) {
+        String CURP_REGEX = "^[A-Z]{4}[0-9]{6}[H,M][A-Z]{5}[A-Z0-9]{2}$";
+
+        Pattern pattern = Pattern.compile(CURP_REGEX);
+        boolean isCurpValid = pattern.matcher(curp).matches();
+
+        if (isCurpValid) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

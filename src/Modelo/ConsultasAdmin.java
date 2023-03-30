@@ -31,7 +31,7 @@ public class ConsultasAdmin extends Conexion {
     public boolean modificar(Admin ad) {
         PreparedStatement ps = null;
         Connection con = obtenerConexion();
-        String sql = "update admin set usuario=?, contrasenia=? where idusuario=?";
+        String sql = "update admin set usuario=?, contrasena=? where idusuario=?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, ad.getUsuario());
@@ -76,16 +76,16 @@ public class ConsultasAdmin extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = obtenerConexion();
-        String sql = "select * from admin where idusuario = ?";
+        String sql = "SELECT * FROM admin WHERE usuario = ?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setInt(1, ad.getIdusuario());
+            ps.setString(1, ad.getUsuario());
             rs = ps.executeQuery();
 
             if (rs.next()) {
                 ad.setIdusuario(Integer.parseInt(rs.getString("idusuario")));
                 ad.setUsuario(rs.getString("usuario"));
-                ad.setContraseña(rs.getString("contrasenia"));
+                ad.setContraseña(rs.getString("contrasena"));
                 return true;
             }
             return false;
@@ -100,11 +100,12 @@ public class ConsultasAdmin extends Conexion {
             }
         }
     }// end-buscar
+
     public boolean verificar_credenciales(Admin ad) {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = obtenerConexion();
-        String sql = "select * from admin where usuario =? and contrasenia =?";
+        String sql = "select * from admin where usuario =? and contrasena =?";
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, ad.getUsuario());
@@ -113,7 +114,7 @@ public class ConsultasAdmin extends Conexion {
 
             if (rs.next()) {
                 return true;
-            } else{
+            } else {
                 return false;
             }
         } catch (SQLException e) {
