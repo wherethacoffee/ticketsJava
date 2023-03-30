@@ -12,9 +12,9 @@ import javax.swing.border.EmptyBorder;
 
 public class FrmGestorMunicipio extends JFrame {
 
-    private JPanel contentPane;
-    private JTextField txtIDMunicipio;
-    private JTextField txtNombreMunicipio;
+    public JPanel contentPane;
+    public JTextField txtIDMunicipio;
+    public JTextField txtNombreMunicipio;
     public JButton btnAgregar, btnActualizar, btnEliminar, btnLimpiar, btnSalir, btnBuscar;
 
     /**
