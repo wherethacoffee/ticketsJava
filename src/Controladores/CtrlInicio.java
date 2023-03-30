@@ -6,11 +6,12 @@ import vista.FrmInicio;
 import vista.FrmLoginAdmin;
 import vista.FrmAgendar;
 import Controladores.CtrlAlumno;
+import Modelo.Alumno;
+import Modelo.ConsultasAlumno;
 
 public class CtrlInicio implements ActionListener {
 
     private final FrmInicio vista;
-    private FrmAgendar frmAgendar;
 
     // ------- Controlador de la vista LoginAdmin -------
     public CtrlInicio() {
@@ -31,12 +32,11 @@ public class CtrlInicio implements ActionListener {
         vista.getBtnAgendarCita().addActionListener(new ActionListener() {
 
             public void actionPerformed(ActionEvent e) {
-                // Crear una instancia de FrmAgendar
-                frmAgendar = new FrmAgendar();
-                // Hacer visible la ventana
-                frmAgendar.setVisible(true);
-                frmAgendar.setTitle("Formulario Cita");
-
+                FrmAgendar frmAgendar = new FrmAgendar();
+                ConsultasAlumno conAl = new ConsultasAlumno();
+                Alumno alumno = new Alumno();
+                CtrlAlumno ctrlAlumno = new CtrlAlumno(alumno, conAl, frmAgendar);
+                ctrlAlumno.iniciar();
                 vista.dispose();
             }
 
@@ -53,11 +53,6 @@ public class CtrlInicio implements ActionListener {
 
     public void iniciar() {
         vista.setVisible(true);
-    }
-
-    public void cambiar() {
-        CtrlAlumno ctrlAlumno = new CtrlAlumno(null, null, frmAgendar);
-        ctrlAlumno.iniciar();
     }
 
 }

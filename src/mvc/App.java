@@ -15,15 +15,15 @@ import Controladores.CtrlLogin;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        // CtrlInicio ctrlInicio = new CtrlInicio();
-        // ctrlInicio.iniciar();
+        CtrlInicio ctrlInicio = new CtrlInicio();
+        ctrlInicio.iniciar();
 
-        Alumno al = new Alumno();
-        FrmAgendar frmAgendar = new FrmAgendar();
-        ConsultasAlumno ca = new ConsultasAlumno();
+        // Alumno al = new Alumno();
+        // FrmAgendar frmAgendar = new FrmAgendar();
+        // ConsultasAlumno ca = new ConsultasAlumno();
 
-        CtrlAlumno ctrlAlumno = new CtrlAlumno(al, ca, frmAgendar);
-        ctrlAlumno.iniciar();
+        // CtrlAlumno ctrlAlumno = new CtrlAlumno(al, ca, frmAgendar);
+        // ctrlAlumno.iniciar();
 
         // Turno tu = new Turno();
         // FrmAdminAgenda frmAdminAgenda = new FrmAdminAgenda();

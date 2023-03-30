@@ -20,6 +20,7 @@ public class CtrlAlumno implements ActionListener {
         this.vista.btnBuscar.addActionListener(this);
         this.vista.btnGuardar.addActionListener(this);
         this.vista.btnModificar.addActionListener(this);
+        this.vista.btnSalir.addActionListener(this);
     }
 
     public void iniciar() {
@@ -37,8 +38,9 @@ public class CtrlAlumno implements ActionListener {
             modelo.setTelefono(vista.txtTelefono.getText());
             modelo.setCorreo(vista.txtCorreo.getText());
             modelo.setNivel(vista.txtNivel.getText());
-            modelo.setAsunto(vista.txtAsunto.getText());
-            modelo.setMunicipio_idmunicipio(Integer.parseInt(vista.txtMunicipio.getText()));
+            modelo.setAsunto(vista.cbAsunto.getSelectedIndex());
+            ;
+            modelo.setMunicipio_idmunicipio(vista.cbMunicipio.getSelectedIndex());
             verficiar_curp(vista.txtCurp.getText());
 
             if (consultas.registrar(modelo)) {
@@ -58,8 +60,8 @@ public class CtrlAlumno implements ActionListener {
             modelo.setTelefono(vista.txtTelefono.getText());
             modelo.setCorreo(vista.txtCorreo.getText());
             modelo.setNivel(vista.txtNivel.getText());
-            modelo.setAsunto(vista.txtAsunto.getText());
-            modelo.setMunicipio_idmunicipio(Integer.parseInt(vista.txtMunicipio.getText()));
+            modelo.setAsunto(vista.cbAsunto.getSelectedIndex());
+            modelo.setMunicipio_idmunicipio(vista.cbMunicipio.getSelectedIndex());
 
             if (consultas.modificar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Alumno modificado con exito");
@@ -81,8 +83,8 @@ public class CtrlAlumno implements ActionListener {
                 vista.txtTelefono.setText(modelo.getTelefono());
                 vista.txtCorreo.setText(modelo.getCorreo());
                 vista.txtNivel.setText(modelo.getNivel());
-                vista.txtAsunto.setText(modelo.getAsunto());
-                vista.txtMunicipio.setText(Integer.toString(modelo.getMunicipio_idmunicipio()));
+                vista.cbAsunto.setSelectedIndex(modelo.getAsunto());
+                vista.cbMunicipio.setSelectedIndex(modelo.getMunicipio_idmunicipio());
 
             } else {
                 JOptionPane.showMessageDialog(null, "Alumno no encontrado");
@@ -103,8 +105,10 @@ public class CtrlAlumno implements ActionListener {
         vista.txtTelefono.setText(null);
         vista.txtCorreo.setText(null);
         vista.txtNivel.setText(null);
-        vista.txtAsunto.setText(null);
-        vista.txtMunicipio.setText(null);
+        vista.cbAsunto.setSelectedItem(null);
+        ;
+        vista.cbMunicipio.setSelectedItem(null);
+        ;
     }
 
     public boolean verficiar_curp(String curp) {

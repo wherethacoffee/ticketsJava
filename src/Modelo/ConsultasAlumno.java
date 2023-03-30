@@ -19,7 +19,7 @@ public class ConsultasAlumno extends Conexion {
             ps.setString(5, pro.getTelefono());
             ps.setString(6, pro.getCorreo());
             ps.setString(7, pro.getNivel());
-            ps.setString(8, pro.getAsunto());
+            ps.setInt(8, pro.getAsunto());
             ps.setInt(9, pro.getMunicipio_idmunicipio());
             ps.execute();
             return true;
@@ -49,7 +49,7 @@ public class ConsultasAlumno extends Conexion {
             ps.setString(4, pro.getTelefono());
             ps.setString(5, pro.getCorreo());
             ps.setString(6, pro.getNivel());
-            ps.setString(7, pro.getAsunto());
+            ps.setInt(7, pro.getAsunto());
             ps.setInt(8, pro.getMunicipio_idmunicipio());
             ps.setString(9, pro.getCurp());
             ps.execute();
@@ -109,7 +109,7 @@ public class ConsultasAlumno extends Conexion {
                 pro.setTelefono(rs.getString("telefono"));
                 pro.setCorreo(rs.getString("correo"));
                 pro.setNivel(rs.getString("nivel"));
-                pro.setAsunto(rs.getString("asunto"));
+                pro.setAsunto(rs.getInt("asunto"));
                 pro.setMunicipio_idmunicipio(rs.getInt("idmunicipio"));
                 return true;
             }

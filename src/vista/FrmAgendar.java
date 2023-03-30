@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JComboBox;
 
 public class FrmAgendar extends JFrame {
 
@@ -19,11 +20,13 @@ public class FrmAgendar extends JFrame {
     public JTextField txtTelefono;
     public JTextField txtCorreo;
     public JTextField txtNivel;
-    public JTextField txtAsunto;
-    public JTextField txtTitular;
-    public JTextField txtMunicipio;
     public JTextField txtMaterno;
-    public JButton btnModificar, btnBuscar, btnGuardar, btnSalir;
+    public JButton btnBuscar;
+    public JButton btnModificar;
+    public JButton btnGuardar;
+    public JButton btnLimpiar;
+    public JButton btnSalir;
+    public JComboBox cbMunicipio, cbAsunto;
 
     /**
      * Launch the application.
@@ -46,7 +49,7 @@ public class FrmAgendar extends JFrame {
      */
     public FrmAgendar() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 545, 585);
+        setBounds(100, 100, 619, 585);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
@@ -54,118 +57,121 @@ public class FrmAgendar extends JFrame {
         contentPane.setLayout(null);
 
         JPanel panel = new JPanel();
-        panel.setBounds(10, 10, 509, 528);
+        panel.setBounds(10, 10, 585, 528);
         contentPane.add(panel);
         panel.setLayout(null);
 
         JLabel lblCurp = new JLabel("Curp:");
         lblCurp.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblCurp.setBounds(28, 10, 102, 24);
+        lblCurp.setBounds(55, 10, 102, 24);
         panel.add(lblCurp);
 
         JLabel lblPaterno = new JLabel("Paterno:");
         lblPaterno.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblPaterno.setBounds(28, 119, 102, 24);
+        lblPaterno.setBounds(55, 119, 102, 24);
         panel.add(lblPaterno);
 
         JLabel lblNombre = new JLabel("Nombre:");
         lblNombre.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblNombre.setBounds(28, 64, 102, 24);
+        lblNombre.setBounds(55, 64, 102, 24);
         panel.add(lblNombre);
 
         txtCurp = new JTextField();
-        txtCurp.setBounds(140, 10, 313, 24);
+        txtCurp.setBounds(167, 10, 313, 24);
         panel.add(txtCurp);
         txtCurp.setColumns(10);
 
         btnGuardar = new JButton("Guardar");
         btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnGuardar.setBounds(21, 470, 92, 32);
+        btnGuardar.setBounds(10, 472, 92, 32);
         panel.add(btnGuardar);
 
         btnSalir = new JButton("Salir");
         btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnSalir.setBounds(263, 470, 92, 32);
+        btnSalir.setBounds(252, 472, 92, 32);
         panel.add(btnSalir);
 
         JLabel lblNivel = new JLabel("Nivel:");
         lblNivel.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblNivel.setBounds(29, 319, 102, 24);
+        lblNivel.setBounds(56, 319, 102, 24);
         panel.add(lblNivel);
 
         JLabel lblCorreo = new JLabel("Correo:");
         lblCorreo.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblCorreo.setBounds(29, 264, 102, 24);
+        lblCorreo.setBounds(56, 264, 102, 24);
         panel.add(lblCorreo);
 
         JLabel lblTelefono = new JLabel("Telefono:");
         lblTelefono.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblTelefono.setBounds(29, 210, 102, 24);
+        lblTelefono.setBounds(56, 210, 102, 24);
         panel.add(lblTelefono);
 
-        JLabel lblMunicipio = new JLabel("id Municipio:");
+        JLabel lblMunicipio = new JLabel("Municipio:");
         lblMunicipio.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblMunicipio.setBounds(28, 418, 103, 24);
+        lblMunicipio.setBounds(55, 418, 103, 24);
         panel.add(lblMunicipio);
 
         JLabel lblAsunto = new JLabel("Asunto:");
         lblAsunto.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblAsunto.setBounds(29, 372, 102, 24);
+        lblAsunto.setBounds(56, 372, 102, 24);
         panel.add(lblAsunto);
 
         txtNombre = new JTextField();
         txtNombre.setColumns(10);
-        txtNombre.setBounds(140, 64, 313, 24);
+        txtNombre.setBounds(167, 64, 313, 24);
         panel.add(txtNombre);
 
         txtPaterno = new JTextField();
         txtPaterno.setColumns(10);
-        txtPaterno.setBounds(140, 119, 313, 24);
+        txtPaterno.setBounds(167, 119, 313, 24);
         panel.add(txtPaterno);
 
         txtTelefono = new JTextField();
         txtTelefono.setColumns(10);
-        txtTelefono.setBounds(141, 210, 313, 24);
+        txtTelefono.setBounds(168, 210, 313, 24);
         panel.add(txtTelefono);
 
         txtCorreo = new JTextField();
         txtCorreo.setColumns(10);
-        txtCorreo.setBounds(141, 264, 313, 24);
+        txtCorreo.setBounds(168, 264, 313, 24);
         panel.add(txtCorreo);
 
         txtNivel = new JTextField();
         txtNivel.setColumns(10);
-        txtNivel.setBounds(141, 319, 313, 24);
+        txtNivel.setBounds(168, 319, 313, 24);
         panel.add(txtNivel);
 
-        txtAsunto = new JTextField();
-        txtAsunto.setColumns(10);
-        txtAsunto.setBounds(141, 372, 313, 24);
-        panel.add(txtAsunto);
+        cbAsunto = new JComboBox();
+        cbAsunto.setBounds(168, 372, 313, 24);
+        panel.add(cbAsunto);
 
-        txtMunicipio = new JTextField();
-        txtMunicipio.setBounds(141, 418, 313, 25);
-        panel.add(txtMunicipio);
+        cbMunicipio = new JComboBox();
+        cbMunicipio.setBounds(168, 418, 313, 25);
+        panel.add(cbMunicipio);
 
         btnModificar = new JButton("Modificar");
         btnModificar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnModificar.setBounds(136, 470, 102, 32);
+        btnModificar.setBounds(125, 472, 102, 32);
         panel.add(btnModificar);
 
         btnBuscar = new JButton("Buscar");
         btnBuscar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnBuscar.setBounds(383, 470, 92, 32);
+        btnBuscar.setBounds(372, 472, 92, 32);
         panel.add(btnBuscar);
 
         JLabel lblMaterno = new JLabel("Materno:");
         lblMaterno.setFont(new Font("Times New Roman", Font.PLAIN, 17));
-        lblMaterno.setBounds(28, 164, 102, 24);
+        lblMaterno.setBounds(55, 164, 102, 24);
         panel.add(lblMaterno);
 
         txtMaterno = new JTextField();
         txtMaterno.setColumns(10);
-        txtMaterno.setBounds(140, 164, 313, 24);
+        txtMaterno.setBounds(167, 164, 313, 24);
         panel.add(txtMaterno);
-    }
 
+        btnLimpiar = new JButton("Limpiar");
+        btnLimpiar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+        btnLimpiar.setBounds(483, 472, 92, 32);
+        panel.add(btnLimpiar);
+    }
 }
