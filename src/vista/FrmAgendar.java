@@ -5,11 +5,13 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import Modelo.ConsultasAlumno;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import java.sql.*;
 
 public class FrmAgendar extends JFrame {
 
@@ -26,7 +28,7 @@ public class FrmAgendar extends JFrame {
     public JButton btnGuardar;
     public JButton btnLimpiar;
     public JButton btnSalir;
-    public JComboBox cbMunicipio, cbAsunto;
+    public JComboBox<String> cbMunicipio, cbAsunto, cbNivel;
 
     /**
      * Launch the application.
@@ -83,12 +85,12 @@ public class FrmAgendar extends JFrame {
 
         btnGuardar = new JButton("Guardar");
         btnGuardar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnGuardar.setBounds(10, 472, 92, 32);
+        btnGuardar.setBounds(10, 472, 105, 32);
         panel.add(btnGuardar);
 
-        btnSalir = new JButton("Salir");
+        btnSalir = new JButton("Regresar");
         btnSalir.setFont(new Font("Tahoma", Font.PLAIN, 15));
-        btnSalir.setBounds(252, 472, 92, 32);
+        btnSalir.setBounds(252, 472, 105, 32);
         panel.add(btnSalir);
 
         JLabel lblNivel = new JLabel("Nivel:");
@@ -136,16 +138,19 @@ public class FrmAgendar extends JFrame {
         txtCorreo.setBounds(168, 264, 313, 24);
         panel.add(txtCorreo);
 
-        txtNivel = new JTextField();
-        txtNivel.setColumns(10);
-        txtNivel.setBounds(168, 319, 313, 24);
-        panel.add(txtNivel);
+        String[] cbNivel_opciones = {"Primaria", "Secundaria", "Preparatoria", "Licenciatura"};
+        cbNivel = new JComboBox<>(cbNivel_opciones);
+        cbNivel.setBounds(168, 319, 313, 24);
+        panel.add(cbNivel);
 
-        cbAsunto = new JComboBox();
+        String[] cbAsunto_opciones = {"Entrega de papeleria", 
+        "Quejas", "Consultas academicas", "Beca estudiantil"};
+        cbAsunto = new JComboBox<>(cbAsunto_opciones);
         cbAsunto.setBounds(168, 372, 313, 24);
         panel.add(cbAsunto);
 
-        cbMunicipio = new JComboBox();
+        ConsultasAlumno cons = new ConsultasAlumno();
+        cbMunicipio = new JComboBox<>(cons.cbMunicipio_fill().toArray(new String[0]));
         cbMunicipio.setBounds(168, 418, 313, 25);
         panel.add(cbMunicipio);
 
