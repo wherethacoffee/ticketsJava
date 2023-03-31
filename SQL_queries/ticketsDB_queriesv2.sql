@@ -35,7 +35,6 @@ CREATE TABLE IF NOT EXISTS `ticketsdb`.`alumno` (
   `nombre` VARCHAR(25) NOT NULL,
   `paterno` VARCHAR(20) NOT NULL,
   `materno` VARCHAR(20) NOT NULL,
-  `edad` INT NOT NULL,
   `telefono` VARCHAR(12) NOT NULL,
   `correo` VARCHAR(45) NOT NULL,
   `nivel` VARCHAR(12) NOT NULL,
