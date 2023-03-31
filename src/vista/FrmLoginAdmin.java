@@ -76,7 +76,7 @@ public class FrmLoginAdmin extends JFrame {
                 btnIngresar.setBounds(54, 165, 108, 29);
                 panel.add(btnIngresar);
 
-                btnSalir = new JButton("Salir");
+                btnSalir = new JButton("Regresar");
                 btnSalir.setFont(new Font("Tahoma", Font.BOLD, 15));
                 btnSalir.setBounds(214, 165, 95, 29);
                 panel.add(btnSalir);
