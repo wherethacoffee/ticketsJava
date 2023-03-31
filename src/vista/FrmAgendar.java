@@ -11,7 +11,6 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
-import java.sql.*;
 
 public class FrmAgendar extends JFrame {
 
