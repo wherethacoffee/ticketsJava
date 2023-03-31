@@ -9,6 +9,16 @@ public class Alumno {
     private String correo;
     private String nivel;
     private String asunto;
+    private String status;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
     private int municipio_idmunicipio;
 
     public String getCurp() {

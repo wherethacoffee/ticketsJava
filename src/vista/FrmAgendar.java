@@ -137,13 +137,13 @@ public class FrmAgendar extends JFrame {
         txtCorreo.setBounds(168, 264, 313, 24);
         panel.add(txtCorreo);
 
-        String[] cbNivel_opciones = {"Primaria", "Secundaria", "Preparatoria", "Licenciatura"};
+        String[] cbNivel_opciones = { "Primaria", "Secundaria", "Preparatoria", "Licenciatura" };
         cbNivel = new JComboBox<>(cbNivel_opciones);
         cbNivel.setBounds(168, 319, 313, 24);
         panel.add(cbNivel);
 
-        String[] cbAsunto_opciones = {"Entrega de papeleria", 
-        "Quejas", "Consultas academicas", "Beca estudiantil"};
+        String[] cbAsunto_opciones = { "Entrega de papeleria",
+                "Quejas", "Consultas academicas", "Beca estudiantil" };
         cbAsunto = new JComboBox<>(cbAsunto_opciones);
         cbAsunto.setBounds(168, 372, 313, 24);
         panel.add(cbAsunto);

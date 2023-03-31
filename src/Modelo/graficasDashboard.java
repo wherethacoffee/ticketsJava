@@ -4,15 +4,16 @@ import java.sql.*;
 import javax.swing.JFrame;
 import org.jfree.chart.*;
 import org.jfree.data.general.DefaultPieDataset;
-public class graficasDashboard extends Conexion{
-    
+
+public class graficasDashboard extends Conexion {
+
     public JFreeChart crearGrafica(Connection cn, String consulta) throws SQLException {
         PreparedStatement ps = cn.prepareStatement(consulta);
         ResultSet rs = ps.executeQuery();
-        
+
         DefaultPieDataset ds = new DefaultPieDataset();
 
-        while(rs.next()){
+        while (rs.next()) {
             String status = rs.getString("status");
             int total = rs.getInt("total");
             ds.setValue(status, total);
@@ -22,7 +23,7 @@ public class graficasDashboard extends Conexion{
         return chart;
     }
 
-    public void crearFrame() throws SQLException{
+    public void crearFrame() throws SQLException {
         Connection conn = obtenerConexion();
         String consulta = "SELECT * FROM status_total";
 

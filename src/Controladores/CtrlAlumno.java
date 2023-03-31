@@ -7,6 +7,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
 import java.util.regex.Pattern;
+import vista.FrmComprobante;
 
 public class CtrlAlumno implements ActionListener {
     private final Alumno modelo;
@@ -38,7 +39,7 @@ public class CtrlAlumno implements ActionListener {
             modelo.setTelefono(vista.txtTelefono.getText());
             modelo.setCorreo(vista.txtCorreo.getText());
             modelo.setNivel(vista.cbNivel.getSelectedItem().toString());
-            modelo.setAsunto(vista.cbAsunto.getSelectedItem().toString());  
+            modelo.setAsunto(vista.cbAsunto.getSelectedItem().toString());
             modelo.setMunicipio_idmunicipio(vista.cbMunicipio.getSelectedIndex());
 
             boolean curpValida = verficiar_curp(modelo.getCurp());

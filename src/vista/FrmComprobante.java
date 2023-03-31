@@ -7,7 +7,6 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
 
-
 public class FrmComprobante extends JFrame {
 
     public JPanel contentPane;
@@ -45,13 +44,11 @@ public class FrmComprobante extends JFrame {
         contentPane.add(panel);
         panel.setLayout(null);
 
-
         JLabel lblComprobante = new JLabel("Comprobante");
         lblComprobante.setFont(new Font("Times New Roman", Font.PLAIN, 30));
         lblComprobante.setBounds(110, 30, 250, 30);
         panel.add(lblComprobante);
-        
-        
+
         JLabel lblNombre = new JLabel("Nombre:");
         lblNombre.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lblNombre.setBounds(35, 120, 102, 24);
@@ -82,9 +79,6 @@ public class FrmComprobante extends JFrame {
         lblTurnoVacio.setBounds(150, 280, 180, 24);
         panel.add(lblTurnoVacio);
 
-
     }
 
-
-    
 }

@@ -6,7 +6,6 @@ import vista.FrmLoginAdmin;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
-import vista.FrmAdminAgenda;
 import vista.FrmInicio;
 
 public class CtrlLogin implements ActionListener {
@@ -21,7 +20,6 @@ public class CtrlLogin implements ActionListener {
         this.vista.btnIngresar.addActionListener(this);
         this.vista.btnSalir.addActionListener(this);
 
-
     }
 
     public void iniciar() {
@@ -33,10 +31,12 @@ public class CtrlLogin implements ActionListener {
 
         if (e.getSource() == vista.btnIngresar) {
             modelo.setUsuario(vista.txtUsuario.getText());
-            modelo.setContraseña(new String(vista.txtContrasena.getPassword())); //Obtiene la contrsaeña del campo de texto 
+            modelo.setContraseña(new String(vista.txtContrasena.getPassword())); // Obtiene la contrsaeña del campo de
+                                                                                 // texto
 
             if (ConsultasAdmin.verificar_credenciales(modelo)) {
-                Cambiar();
+                FrmInicio fInicio = new FrmInicio();
+                vista.dispose();
             } else {
                 JOptionPane.showMessageDialog(vista, "Usuario o contraseña incorrectos");
             }
@@ -46,18 +46,9 @@ public class CtrlLogin implements ActionListener {
             CtrlInicio fInicio = new CtrlInicio();
             fInicio.iniciar();
             vista.dispose();
-            
-           // System.exit(0);
+
+            // System.exit(0);
         }
 
-
-
-    }
-
-    public void Cambiar() {
-        FrmAdminAgenda frmAdminAgenda = new FrmAdminAgenda();
-        frmAdminAgenda.setVisible(true);
-        frmAdminAgenda.setLocationRelativeTo(null);
-        vista.dispose();
     }
 }

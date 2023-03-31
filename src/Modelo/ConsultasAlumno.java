@@ -11,9 +11,9 @@ public class ConsultasAlumno extends Conexion {
     public boolean registrar(Alumno pro) {
         PreparedStatement ps = null;
         Connection conn = obtenerConexion();
-        String sql = "INSERT INTO alumno (curp, nombre, paterno, materno, telefono, correo, nivel, "+
-        "asunto, turno, idmunicipio) SELECT ?, ?, ?, ?, ?, ?, ?, ?, (SELECT IFNULL(MAX(turno), 0)"+
-        " + 1 FROM alumno WHERE idmunicipio = ?), ?;";
+        String sql = "INSERT INTO alumno (curp, nombre, paterno, materno, telefono, correo, nivel, " +
+                "asunto, turno, idmunicipio) SELECT ?, ?, ?, ?, ?, ?, ?, ?, (SELECT IFNULL(MAX(turno), 0)" +
+                " + 1 FROM alumno WHERE idmunicipio = ?), ?;";
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, pro.getCurp());
@@ -75,10 +75,10 @@ public class ConsultasAlumno extends Conexion {
 
     public boolean eliminar(Alumno pro) {
         PreparedStatement ps = null;
-        Connection con = obtenerConexion();
+        Connection conn = obtenerConexion();
         String sql = "DELETE FROM alumno WHERE curp=?";
         try {
-            ps = con.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             ps.setString(1, pro.getCurp());
             ps.execute();
             return true;
@@ -87,7 +87,7 @@ public class ConsultasAlumno extends Conexion {
             return false;
         } finally {
             try {
-                con.close();
+                conn.close();
             } catch (SQLException e) {
                 System.err.println(e);
 
@@ -99,10 +99,10 @@ public class ConsultasAlumno extends Conexion {
     public boolean buscar(Alumno pro) {
         PreparedStatement ps = null;
         ResultSet rs = null;
-        Connection con = obtenerConexion();
-        String sql = "SELECT * FROM alumno WHERE curp = ?;";
+        Connection conn = obtenerConexion();
+        String sql = "SELECT * FROM alumno WHERE curp = ?";
         try {
-            ps = con.prepareStatement(sql);
+            ps = conn.prepareStatement(sql);
             ps.setString(1, pro.getCurp());
             rs = ps.executeQuery();
 
@@ -134,17 +134,17 @@ public class ConsultasAlumno extends Conexion {
 
     }// end buscar
 
-    public ArrayList<String> cbMunicipio_fill(){
+    public ArrayList<String> cbMunicipio_fill() {
         ArrayList<String> nombresMunicipio = new ArrayList<String>();
-        //PreparedStatement ps = null;
+        // PreparedStatement ps = null;
         ResultSet rs = null;
-        Connection con = obtenerConexion();
-        String sql = "SELECT nombremunicipio FROM municipio;";
+        Connection conn = obtenerConexion();
+        String sql = "SELECT nombremunicipio FROM municipio";
         try {
-            Statement stmt = con.createStatement();
+            Statement stmt = conn.createStatement();
             rs = stmt.executeQuery(sql);
 
-            while(rs.next()) {
+            while (rs.next()) {
                 nombresMunicipio.add(rs.getString("nombremunicipio"));
             }
         } catch (Exception e) {
