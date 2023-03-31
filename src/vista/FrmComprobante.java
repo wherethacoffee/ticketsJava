@@ -48,7 +48,7 @@ public class FrmComprobante extends JFrame {
 
         JLabel lblComprobante = new JLabel("Comprobante");
         lblComprobante.setFont(new Font("Times New Roman", Font.PLAIN, 30));
-        lblComprobante.setBounds(110, 30, 200, 30);
+        lblComprobante.setBounds(110, 30, 250, 30);
         panel.add(lblComprobante);
         
         
@@ -74,12 +74,12 @@ public class FrmComprobante extends JFrame {
 
         JLabel lblTurno = new JLabel("Tu turno es:");
         lblTurno.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        lblTurno.setBounds(15, 280, 102, 24);
+        lblTurno.setBounds(15, 280, 140, 24);
         panel.add(lblTurno);
 
         JLabel lblTurnoVacio = new JLabel("");
         lblTurnoVacio.setFont(new Font("Times New Roman", Font.PLAIN, 20));
-        lblTurnoVacio.setBounds(115, 280, 180, 24);
+        lblTurnoVacio.setBounds(150, 280, 180, 24);
         panel.add(lblTurnoVacio);
 
 
