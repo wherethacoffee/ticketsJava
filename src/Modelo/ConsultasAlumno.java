@@ -133,7 +133,7 @@ public class ConsultasAlumno extends Conexion {
 
     public ArrayList<String> cbMunicipio_fill(){
         ArrayList<String> nombresMunicipio = new ArrayList<String>();
-        PreparedStatement ps = null;
+        //PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = obtenerConexion();
         String sql = "SELECT nombremunicipio FROM municipio;";
