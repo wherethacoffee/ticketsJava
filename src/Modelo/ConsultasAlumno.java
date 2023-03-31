@@ -11,7 +11,9 @@ public class ConsultasAlumno extends Conexion {
     public boolean registrar(Alumno pro) {
         PreparedStatement ps = null;
         Connection conn = obtenerConexion();
-        String sql = "INSERT INTO ticketsdb.alumno VALUES  (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO alumno (curp, nombre, paterno, materno, telefono, correo, nivel, "+
+        "asunto, turno, idmunicipio) SELECT ?, ?, ?, ?, ?, ?, ?, ?, (SELECT IFNULL(MAX(turno), 0)"+
+        " + 1 FROM alumno WHERE idmunicipio = ?), ?;";
         try {
             ps = conn.prepareStatement(sql);
             ps.setString(1, pro.getCurp());
@@ -21,8 +23,9 @@ public class ConsultasAlumno extends Conexion {
             ps.setString(5, pro.getTelefono());
             ps.setString(6, pro.getCorreo());
             ps.setString(7, pro.getNivel());
-            ps.setInt(8, pro.getAsunto());
+            ps.setString(8, pro.getAsunto());
             ps.setInt(9, pro.getMunicipio_idmunicipio());
+            ps.setInt(10, pro.getMunicipio_idmunicipio());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -51,7 +54,7 @@ public class ConsultasAlumno extends Conexion {
             ps.setString(4, pro.getTelefono());
             ps.setString(5, pro.getCorreo());
             ps.setString(6, pro.getNivel());
-            ps.setInt(7, pro.getAsunto());
+            ps.setString(7, pro.getAsunto());
             ps.setInt(8, pro.getMunicipio_idmunicipio());
             ps.setString(9, pro.getCurp());
             ps.execute();
@@ -111,7 +114,7 @@ public class ConsultasAlumno extends Conexion {
                 pro.setTelefono(rs.getString("telefono"));
                 pro.setCorreo(rs.getString("correo"));
                 pro.setNivel(rs.getString("nivel"));
-                pro.setAsunto(rs.getInt("asunto"));
+                pro.setAsunto(rs.getString("asunto"));
                 pro.setMunicipio_idmunicipio(rs.getInt("idmunicipio"));
                 return true;
             }

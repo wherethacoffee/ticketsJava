@@ -8,7 +8,7 @@ public class Alumno {
     private String telefono;
     private String correo;
     private String nivel;
-    private int asunto;
+    private String asunto;
     private int municipio_idmunicipio;
 
     public String getCurp() {
@@ -67,11 +67,11 @@ public class Alumno {
         this.nivel = nivel;
     }
 
-    public int getAsunto() {
+    public String getAsunto() {
         return asunto;
     }
 
-    public void setAsunto(int asunto) {
+    public void setAsunto(String asunto) {
         this.asunto = asunto;
     }
 

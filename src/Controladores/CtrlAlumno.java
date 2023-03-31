@@ -37,8 +37,8 @@ public class CtrlAlumno implements ActionListener {
             modelo.setMaterno(vista.txtMaterno.getText());
             modelo.setTelefono(vista.txtTelefono.getText());
             modelo.setCorreo(vista.txtCorreo.getText());
-            modelo.setNivel(vista.txtNivel.getText());
-            modelo.setAsunto(vista.cbAsunto.getSelectedIndex());  
+            modelo.setNivel(vista.cbNivel.getSelectedItem().toString());
+            modelo.setAsunto(vista.cbAsunto.getSelectedItem().toString());  
             modelo.setMunicipio_idmunicipio(vista.cbMunicipio.getSelectedIndex());
 
             boolean curpValida = verficiar_curp(modelo.getCurp());
@@ -63,8 +63,8 @@ public class CtrlAlumno implements ActionListener {
             modelo.setMaterno(vista.txtMaterno.getText());
             modelo.setTelefono(vista.txtTelefono.getText());
             modelo.setCorreo(vista.txtCorreo.getText());
-            modelo.setNivel(vista.txtNivel.getText());
-            modelo.setAsunto(vista.cbAsunto.getSelectedIndex());
+            modelo.setNivel(vista.cbNivel.getSelectedItem().toString());
+            modelo.setAsunto(vista.cbAsunto.getSelectedItem().toString());
             modelo.setMunicipio_idmunicipio(vista.cbMunicipio.getSelectedIndex());
 
             boolean curpValida = verficiar_curp(modelo.getCurp());
@@ -91,8 +91,8 @@ public class CtrlAlumno implements ActionListener {
                 vista.txtMaterno.setText(modelo.getMaterno());
                 vista.txtTelefono.setText(modelo.getTelefono());
                 vista.txtCorreo.setText(modelo.getCorreo());
-                vista.txtNivel.setText(modelo.getNivel());
-                vista.cbAsunto.setSelectedIndex(modelo.getAsunto());
+                vista.cbNivel.setSelectedItem(modelo.getNivel());
+                vista.cbAsunto.setSelectedItem(modelo.getAsunto());
                 vista.cbMunicipio.setSelectedIndex(modelo.getMunicipio_idmunicipio());
 
             } else {
