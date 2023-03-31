@@ -83,7 +83,7 @@ public class FrmLoginAdmin extends JFrame {
 
                 JLabel lblIniciarSesion = new JLabel("Iniciar Sesion");
                 lblIniciarSesion.setFont(new Font("Tahoma", Font.BOLD, 15));
-                lblIniciarSesion.setBounds(138, 8, 108, 29);
+                lblIniciarSesion.setBounds(138, 8, 140, 29);
                 panel.add(lblIniciarSesion);
         }
 }
