@@ -67,12 +67,17 @@ public class CtrlAlumno implements ActionListener {
             modelo.setAsunto(vista.cbAsunto.getSelectedIndex());
             modelo.setMunicipio_idmunicipio(vista.cbMunicipio.getSelectedIndex());
 
-            if (consultas.modificar(modelo)) {
-                JOptionPane.showMessageDialog(null, "Alumno modificado con exito");
-                limpiar();
+            boolean curpValida = verficiar_curp(modelo.getCurp());
+            if (curpValida) {
+                if (consultas.modificar(modelo)) {
+                    JOptionPane.showMessageDialog(null, "Alumno modificado con exito");
+                    limpiar();
+                } else {
+                    JOptionPane.showMessageDialog(null, "Alumno no modificado");
+                    limpiar();
+                }
             } else {
-                JOptionPane.showMessageDialog(null, "Alumno no modificado");
-                limpiar();
+                JOptionPane.showMessageDialog(null, "La curp ingresada no es válida");
             }
         }
 
@@ -96,7 +101,9 @@ public class CtrlAlumno implements ActionListener {
             }
         }
         if (e.getSource() == vista.btnSalir) {
-            System.exit(0);
+            CtrlInicio fInicio = new CtrlInicio();
+            fInicio.iniciar();
+            vista.dispose();
         }
 
     }
@@ -108,7 +115,7 @@ public class CtrlAlumno implements ActionListener {
         vista.txtMaterno.setText(null);
         vista.txtTelefono.setText(null);
         vista.txtCorreo.setText(null);
-        vista.txtNivel.setText(null);
+        vista.cbNivel.getSelectedItem();
         vista.cbAsunto.setSelectedItem(null);
         ;
         vista.cbMunicipio.setSelectedItem(null);
