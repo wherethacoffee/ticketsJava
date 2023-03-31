@@ -4,6 +4,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 
 public class ConsultasAlumno extends Conexion {
     public boolean registrar(Alumno pro) {
@@ -128,5 +130,24 @@ public class ConsultasAlumno extends Conexion {
         }
 
     }// end buscar
+
+    public ArrayList<String> cbMunicipio_fill(){
+        ArrayList<String> nombresMunicipio = new ArrayList<String>();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection con = obtenerConexion();
+        String sql = "SELECT nombremunicipio FROM municipio;";
+        try {
+            Statement stmt = con.createStatement();
+            rs = stmt.executeQuery(sql);
+
+            while(rs.next()) {
+                nombresMunicipio.add(rs.getString("nombremunicipio"));
+            }
+        } catch (Exception e) {
+            System.out.println("Error " + e);
+        }
+        return nombresMunicipio;
+    }
 
 }// end class
