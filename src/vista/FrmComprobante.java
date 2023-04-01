@@ -10,7 +10,11 @@ import java.awt.Font;
 public class FrmComprobante extends JFrame {
 
     public JPanel contentPane;
+<<<<<<< HEAD
     public JLabel lblNombreVacio, lblTurnoVacio, lblAsuntoVacio;
+=======
+    public JLabel lblNombreVacio, lblAsuntoVacio, lblTurnoVacio;
+>>>>>>> 0a029904f60a57897ccabbb6acabb875494efe34
 
     /**
      * Launch the application.

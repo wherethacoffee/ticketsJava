@@ -5,6 +5,7 @@ import java.awt.event.ActionListener;
 import vista.FrmInicio;
 import vista.FrmLoginAdmin;
 import vista.FrmAgendar;
+import vista.FrmComprobante;
 import Modelo.Alumno;
 import Modelo.ConsultasAlumno;
 import Modelo.ConsultasAdmin;
@@ -33,9 +34,10 @@ public class CtrlInicio implements ActionListener {
 
             public void actionPerformed(ActionEvent e) {
                 FrmAgendar frmAgendar = new FrmAgendar();
+                FrmComprobante frmcomprobante = new FrmComprobante();
                 ConsultasAlumno conAl = new ConsultasAlumno();
                 Alumno alumno = new Alumno();
-                CtrlAlumno ctrlAlumno = new CtrlAlumno(alumno, conAl, frmAgendar);
+                CtrlAlumno ctrlAlumno = new CtrlAlumno(alumno, conAl, frmAgendar, frmcomprobante);
                 ctrlAlumno.iniciar();
                 vista.dispose();
             }
