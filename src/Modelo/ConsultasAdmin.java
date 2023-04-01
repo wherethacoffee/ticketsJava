@@ -13,7 +13,7 @@ public class ConsultasAdmin extends Conexion {
         try {
             ps = con.prepareStatement(sql);
             ps.setString(1, ad.getUsuario());
-            ps.setString(2, ad.getUsuario());
+            ps.setString(2, ad.getContraseña());
             ps.execute();
             return true;
         } catch (SQLException e) {
@@ -76,10 +76,10 @@ public class ConsultasAdmin extends Conexion {
         PreparedStatement ps = null;
         ResultSet rs = null;
         Connection con = obtenerConexion();
-        String sql = "SELECT * FROM admin WHERE usuario = ?";
+        String sql = "SELECT * FROM admin WHERE idusuario = ?";
         try {
             ps = con.prepareStatement(sql);
-            ps.setString(1, ad.getUsuario());
+            ps.setInt(1, ad.getIdusuario());
             rs = ps.executeQuery();
 
             if (rs.next()) {
@@ -123,7 +123,7 @@ public class ConsultasAdmin extends Conexion {
             return false;
         } finally {
             try {
-                // Cierra la conexión a la base de datos 
+                // Cierra la conexión a la base de datos
                 con.close();
             } catch (SQLException e) {
                 System.err.println(e);

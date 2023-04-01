@@ -15,7 +15,8 @@ public class FrmGestorMunicipio extends JFrame {
     public JPanel contentPane;
     public JTextField txtIDMunicipio;
     public JTextField txtNombreMunicipio;
-    public JButton btnAgregar, btnActualizar, btnEliminar, btnLimpiar, btnSalir, btnBuscar;
+    public JButton btnAgregar, btnActualizar, btnEliminar, btnLimpia;
+    public JButton btnBuscar, btnLimpiar, btnAtras;
 
     /**
      * Launch the application.
@@ -84,6 +85,11 @@ public class FrmGestorMunicipio extends JFrame {
         btnLimpiar.setFont(new Font("Tahoma", Font.BOLD, 15));
         btnLimpiar.setBounds(378, 139, 97, 32);
         panel.add(btnLimpiar);
+
+        btnAtras = new JButton("Atras");
+        btnAtras.setFont(new Font("Tahoma", Font.BOLD, 15));
+        btnAtras.setBounds(378, 100, 97, 32);
+        panel.add(btnAtras);
 
         JLabel lblGestorMunicipio = new JLabel("Gestor de Municipios");
         lblGestorMunicipio.setFont(new Font("Times New Roman", Font.BOLD, 20));

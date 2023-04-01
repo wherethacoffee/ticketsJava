@@ -33,7 +33,6 @@ public class CtrlGestorAdmin implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == vista.btnAgregar) {
-            modelo.setIdusuario(Integer.parseInt(vista.txtIDusuario.getText()));
             modelo.setUsuario(vista.txtUsuario.getText());
             modelo.setContraseña(vista.txtContrasena.getText());
 
@@ -51,6 +50,7 @@ public class CtrlGestorAdmin implements ActionListener {
 
             if (consultas.modificar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Admin Actualizado");
+                limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "Admin No Actualizado");
             }
@@ -60,8 +60,10 @@ public class CtrlGestorAdmin implements ActionListener {
             modelo.setIdusuario(Integer.parseInt(vista.txtIDusuario.getText()));
             if (consultas.eliminar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Admin Eliminado");
+                limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "Admin No Eliminado");
+                limpiar();
             }
 
         }
@@ -77,7 +79,15 @@ public class CtrlGestorAdmin implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Admin No Encontrado");
             }
         }
+        if (e.getSource() == vista.btnLimpiar) {
+            limpiar();
+        }
 
     }
 
+    public void limpiar() {
+        vista.txtIDusuario.setText(null);
+        vista.txtUsuario.setText(null);
+        vista.txtContrasena.setText(null);
+    }
 }

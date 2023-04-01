@@ -106,6 +106,9 @@ public class CtrlAlumno implements ActionListener {
             fInicio.iniciar();
             vista.dispose();
         }
+        if (e.getSource() == vista.btnLimpiar) {
+            limpiar();
+        }
 
     }
 
@@ -118,9 +121,7 @@ public class CtrlAlumno implements ActionListener {
         vista.txtCorreo.setText(null);
         vista.cbNivel.getSelectedItem();
         vista.cbAsunto.setSelectedItem(null);
-        ;
         vista.cbMunicipio.setSelectedItem(null);
-        ;
     }
 
     public boolean verficiar_curp(String curp) {

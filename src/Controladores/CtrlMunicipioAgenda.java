@@ -21,12 +21,12 @@ public class CtrlMunicipioAgenda implements ActionListener {
         this.vista.btnAgregar.addActionListener(this);
         this.vista.btnEliminar.addActionListener(this);
         this.vista.btnActualizar.addActionListener(this);
-        this.vista.btnSalir.addActionListener(this);
-        this.vista.btnBuscar.addActionListener(this); 
+        this.vista.btnAtras.addActionListener(this);
+        this.vista.btnBuscar.addActionListener(this);
         this.vista.btnLimpiar.addActionListener(this);
     }
 
-    public void iniciar(){
+    public void iniciar() {
         vista.setVisible(true);
         vista.setLocationRelativeTo(null);
     }
@@ -34,11 +34,11 @@ public class CtrlMunicipioAgenda implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        if (e.getSource() == vista.btnAgregar){
+        if (e.getSource() == vista.btnAgregar) {
             modelo.setIdmunicipio(Integer.parseInt(vista.txtIDMunicipio.getText()));
             modelo.setNombre(vista.txtNombreMunicipio.getText());
 
-            if (consultas.registrar(modelo)){
+            if (consultas.registrar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Municipio Registrado con exito");
                 limpiar();
             } else {
@@ -47,10 +47,10 @@ public class CtrlMunicipioAgenda implements ActionListener {
             }
         }
 
-        if (e.getSource() == vista.btnEliminar){
+        if (e.getSource() == vista.btnEliminar) {
             modelo.setIdmunicipio(Integer.parseInt(vista.txtIDMunicipio.getText()));
 
-            if (consultas.eliminar(modelo)){
+            if (consultas.eliminar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Municipio Eliminado con exito");
                 limpiar();
             } else {
@@ -59,11 +59,11 @@ public class CtrlMunicipioAgenda implements ActionListener {
             }
         }
 
-        if (e.getSource() == vista.btnActualizar){
+        if (e.getSource() == vista.btnActualizar) {
             modelo.setIdmunicipio(Integer.parseInt(vista.txtIDMunicipio.getText()));
             modelo.setNombre(vista.txtNombreMunicipio.getText());
 
-            if (consultas.modificar(modelo)){
+            if (consultas.modificar(modelo)) {
                 JOptionPane.showMessageDialog(null, "Municipio modificado con exito");
                 limpiar();
             } else {
@@ -72,29 +72,30 @@ public class CtrlMunicipioAgenda implements ActionListener {
             }
         }
 
-        if (e.getSource() == vista.btnBuscar){
+        if (e.getSource() == vista.btnBuscar) {
             modelo.setIdmunicipio(Integer.parseInt(vista.txtIDMunicipio.getText()));
 
-            if (consultas.buscar(modelo)){
-                vista.txtIDMunicipio.setText(String.valueOf(modelo.getIdmunicipio()));
+            if (consultas.buscar(modelo)) {
+                vista.txtIDMunicipio.setText(Integer.toString(modelo.getIdmunicipio()));
                 vista.txtNombreMunicipio.setText(modelo.getNombre());
-                limpiar();
             } else {
                 JOptionPane.showMessageDialog(null, "Municipio no encontrado");
                 limpiar();
             }
         }
 
-        if (e.getSource() == vista.btnSalir){
-            System.exit(0);
+        if (e.getSource() == vista.btnAtras) {
+            CtrlAdminInicio finicio = new CtrlAdminInicio();
+            finicio.iniciar();
+            vista.dispose();
         }
-        
-        if (e.getSource() == vista.btnLimpiar){
+
+        if (e.getSource() == vista.btnLimpiar) {
             limpiar();
         }
     }
 
-    public void limpiar(){
+    public void limpiar() {
         vista.txtIDMunicipio.setText(null);
         vista.txtNombreMunicipio.setText(null);
     }
