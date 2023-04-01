@@ -11,7 +11,8 @@ import javax.swing.JScrollPane;
 public class FrmAdminInicio extends JFrame {
 
     public JPanel contentPane;
-    public JButton btnAgenda, btnMunicipios, btnAdmin, btnSalir, btnGrafica1, btnGrafica2;
+    public JButton btnAgenda, btnMunicipios, btnAdmin;
+    public JButton btnSalir, btnGrafica1, btnGrafica2;
 
     /**
      * Launch the application.
@@ -78,4 +79,29 @@ public class FrmAdminInicio extends JFrame {
         btnGrafica2.setBounds(299, 199, 205, 39);
         panel.add(btnGrafica2);
     }
+
+    public JButton getBtnAdmin() {
+        return btnAdmin;
+    }
+
+    public JButton getBtnAgenda() {
+        return btnAgenda;
+    }
+
+    public JButton getBtnMunicipios() {
+        return btnMunicipios;
+    }
+
+    public JButton getBtnSalir() {
+        return btnSalir;
+    }
+
+    public JButton getBtnGrafica1() {
+        return btnGrafica1;
+    }
+
+    public JButton getBtnGrafica2() {
+        return btnGrafica2;
+    }
+
 }

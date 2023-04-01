@@ -12,11 +12,15 @@ import Modelo.Admin;
 import Modelo.ConsultasAdmin;
 import vista.FrmLoginAdmin;
 import Controladores.CtrlLogin;
+import Modelo.graficasDashboard;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        CtrlInicio ctrlInicio = new CtrlInicio();
-        ctrlInicio.iniciar();
+        // CtrlInicio ctrlInicio = new CtrlInicio();
+        // ctrlInicio.iniciar();
+        graficasDashboard gd = new graficasDashboard();
+        gd.crearFrame();
+
     }
 
 }
