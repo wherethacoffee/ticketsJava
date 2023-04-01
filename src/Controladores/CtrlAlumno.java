@@ -48,6 +48,9 @@ public class CtrlAlumno implements ActionListener {
             if (curpValida) {
                 if (consultas.registrar(modelo) && consultas.comprobante_fill(modelo)) {
                     JOptionPane.showMessageDialog(null, "Alumno Registrado con exito");
+                    vistaComprobante.lblNombreVacio.setText(modelo.getNombre());
+                    vistaComprobante.lblAsuntoVacio.setText(modelo.getAsunto());
+                    vistaComprobante.lblTurnoVacio.setText(String.valueOf(modelo.getTurno()));
                     limpiar();
                     CtrlTicket fComprobante = new CtrlTicket(modelo, consultas, vistaComprobante);
                     fComprobante.iniciar();
