@@ -51,7 +51,7 @@ public class CtrlAdminInicio implements ActionListener {
                 FrmAgendar frmAgendar = new FrmAgendar();
                 ConsultasAlumno cnAlumno = new ConsultasAlumno();
                 Alumno alumno = new Alumno();
-                CtrlAlumno ctrlAlumno = new CtrlAlumno(alumno, cnAlumno, frmAgendar);
+                CtrlAlumno ctrlAlumno = new CtrlAlumno(alumno, cnAlumno, frmAgendar, null);
                 ctrlAlumno.iniciar();
             }
 
