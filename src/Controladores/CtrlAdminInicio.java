@@ -16,6 +16,10 @@ import Modelo.Municipio;
 public class CtrlAdminInicio implements ActionListener {
     private final FrmAdminInicio vista;
 
+    public void iniciar() {
+        vista.setVisible(true);
+    }
+
     public CtrlAdminInicio() {
         vista = new FrmAdminInicio();
 

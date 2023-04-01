@@ -35,7 +35,8 @@ public class CtrlLogin implements ActionListener {
                                                                                  // texto
 
             if (ConsultasAdmin.verificar_credenciales(modelo)) {
-                FrmInicio fInicio = new FrmInicio();
+                CtrlAdminInicio ctrlAdminInicio = new CtrlAdminInicio();
+                ctrlAdminInicio.iniciar();
                 vista.dispose();
             } else {
                 JOptionPane.showMessageDialog(vista, "Usuario o contraseña incorrectos");
