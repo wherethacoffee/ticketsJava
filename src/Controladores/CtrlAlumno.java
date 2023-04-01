@@ -13,11 +13,13 @@ public class CtrlAlumno implements ActionListener {
     private final Alumno modelo;
     private final ConsultasAlumno consultas;
     private final FrmAgendar vista;
+    private final FrmComprobante vistaComprobante;
 
-    public CtrlAlumno(Alumno modelo, ConsultasAlumno consultas, FrmAgendar vista) {
+    public CtrlAlumno(Alumno modelo, ConsultasAlumno consultas, FrmAgendar vista, FrmComprobante vistaComprobante) {
         this.modelo = modelo;
         this.consultas = consultas;
         this.vista = vista;
+        this.vistaComprobante = vistaComprobante;
         this.vista.btnBuscar.addActionListener(this);
         this.vista.btnGuardar.addActionListener(this);
         this.vista.btnModificar.addActionListener(this);
@@ -44,9 +46,11 @@ public class CtrlAlumno implements ActionListener {
 
             boolean curpValida = verficiar_curp(modelo.getCurp());
             if (curpValida) {
-                if (consultas.registrar(modelo)) {
+                if (consultas.registrar(modelo) && consultas.comprobante_fill(modelo)) {
                     JOptionPane.showMessageDialog(null, "Alumno Registrado con exito");
                     limpiar();
+                    CtrlTicket fComprobante = new CtrlTicket(modelo, consultas, vistaComprobante);
+                    fComprobante.iniciar();
                 } else {
                     JOptionPane.showMessageDialog(null, "Alumno no registrado");
                     limpiar();

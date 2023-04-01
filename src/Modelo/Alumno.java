@@ -10,6 +10,15 @@ public class Alumno {
     private String nivel;
     private String asunto;
     private String status;
+    private int turno;
+
+    public int getTurno() {
+        return turno;
+    }
+
+    public void setTurno(int turno) {
+        this.turno = turno;
+    }
 
     public String getStatus() {
         return status;

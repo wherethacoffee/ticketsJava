@@ -10,6 +10,7 @@ import java.awt.Font;
 public class FrmComprobante extends JFrame {
 
     public JPanel contentPane;
+    public JLabel lblNombreVacio, lblAsuntoVacio, lblTurnoVacio;
 
     /**
      * Launch the application.
@@ -54,7 +55,7 @@ public class FrmComprobante extends JFrame {
         lblNombre.setBounds(35, 120, 102, 24);
         panel.add(lblNombre);
 
-        JLabel lblNombreVacio = new JLabel("");
+        lblNombreVacio = new JLabel("");
         lblNombreVacio.setFont(new Font("Times New Roman", Font.PLAIN, 19));
         lblNombreVacio.setBounds(115, 120, 250, 24);
         panel.add(lblNombreVacio);
@@ -64,7 +65,7 @@ public class FrmComprobante extends JFrame {
         lblAsunto.setBounds(42, 200, 102, 24);
         panel.add(lblAsunto);
 
-        JLabel lblAsuntoVacio = new JLabel("");
+        lblAsuntoVacio = new JLabel("");
         lblAsuntoVacio.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lblAsuntoVacio.setBounds(115, 200, 300, 24);
         panel.add(lblAsuntoVacio);
@@ -74,7 +75,7 @@ public class FrmComprobante extends JFrame {
         lblTurno.setBounds(15, 280, 140, 24);
         panel.add(lblTurno);
 
-        JLabel lblTurnoVacio = new JLabel("");
+        lblTurnoVacio = new JLabel("");
         lblTurnoVacio.setFont(new Font("Times New Roman", Font.PLAIN, 20));
         lblTurnoVacio.setBounds(150, 280, 180, 24);
         panel.add(lblTurnoVacio);

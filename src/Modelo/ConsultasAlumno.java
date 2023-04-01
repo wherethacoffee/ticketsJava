@@ -153,4 +153,34 @@ public class ConsultasAlumno extends Conexion {
         return nombresMunicipio;
     }
 
+    public boolean comprobante_fill(Alumno pro){
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        Connection conn = obtenerConexion();
+        String sql = "SELECT nombre, asunto, turno FROM alumno WHERE curp =?";
+
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, pro.getCurp());
+            rs = ps.executeQuery();
+            if (rs.next()) {
+                pro.setNombre(rs.getString("nombre"));
+                pro.setAsunto(rs.getString("asunto"));
+                pro.setTurno(rs.getInt("turno"));
+                return true;
+            }
+            return false;
+        } catch (SQLException e) {
+            System.err.println(e);
+            return false;
+        } finally{
+            try {
+                conn.close();
+            } catch (SQLException e) {
+                System.err.println(e);
+            }
+        }
+
+    }
+
 }// end class
